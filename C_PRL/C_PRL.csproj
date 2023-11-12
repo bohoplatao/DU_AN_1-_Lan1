@@ -9,12 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.3.5" />
-    <PackageReference Include="Telerik.SvgIcons" Version="2.0.0" />
+    <Folder Include="Anh\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Anh\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.19">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\B_BUS\B_BUS.csproj" />
   </ItemGroup>
 
   <ItemGroup>
