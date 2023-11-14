@@ -440,6 +440,10 @@ namespace A_DAL.Migrations
                     b.Property<DateTime>("NgaySinh")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("QRCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Quyen")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

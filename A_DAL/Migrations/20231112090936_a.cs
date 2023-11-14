@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace A_DAL.Migrations
 {
-    public partial class h : Migration
+    public partial class a : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -142,7 +142,8 @@ namespace A_DAL.Migrations
                     NgaySinh = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MatKhau = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quyen = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TrangThai = table.Column<bool>(type: "bit", nullable: false)
+                    TrangThai = table.Column<bool>(type: "bit", nullable: false),
+                    QRCode = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -418,7 +419,7 @@ namespace A_DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_HoaDonCT_HoaDon_MaLaptopChiTiet",
-                        column: x => x.MaHoaDon,
+                        column: x => x.MaLaptopChiTiet,
                         principalTable: "HoaDon",
                         principalColumn: "MaHoaDon",
                         onDelete: ReferentialAction.Cascade);

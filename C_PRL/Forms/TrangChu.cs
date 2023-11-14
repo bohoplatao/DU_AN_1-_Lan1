@@ -83,9 +83,11 @@ namespace C_PRL.Forms
                 ShowChildButtons2();
         }
 
-        
-
-        
+        private void bt_Hang_TheLoai_Click(object sender, EventArgs e)
+        {
+            Hang_TheLoai hang_tl = new Hang_TheLoai();
+            hang_tl.Show();
+        }
     }
 
    

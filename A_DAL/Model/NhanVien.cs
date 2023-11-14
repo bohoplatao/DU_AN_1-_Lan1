@@ -21,8 +21,9 @@ namespace A_DAL.Model
         public string MatKhau { get; set; }
         public string Quyen { get; set; }
         public bool TrangThai { get; set; }
+        public string QRCode { get; set; }
 
-       
+
         public virtual ICollection<HoaDon> HoaDons { get; set; }
 
         

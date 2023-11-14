@@ -48,7 +48,7 @@ namespace A_DAL.Context
         {
             // Thực hiện các ràng buộc kết nối
             base.OnConfiguring(optionsBuilder.
-                UseSqlServer(@"Data Source=LAPTOP-CXH2410\SQLEXPRESS;Initial Catalog=QL_LAPTOP_LAN3;Integrated Security=True"));
+                UseSqlServer(@"Data Source=LAPTOP-CXH2410\SQLEXPRESS;Initial Catalog=QL_LAPTOP_LAN4;Integrated Security=True"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

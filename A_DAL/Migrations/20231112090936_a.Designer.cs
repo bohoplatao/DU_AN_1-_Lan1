@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace A_DAL.Migrations
 {
     [DbContext(typeof(QL_LapTopContext))]
-    [Migration("20231112021745_h")]
-    partial class h
+    [Migration("20231112090936_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -441,6 +441,10 @@ namespace A_DAL.Migrations
 
                     b.Property<DateTime>("NgaySinh")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("QRCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Quyen")
                         .IsRequired()

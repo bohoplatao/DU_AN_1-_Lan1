@@ -1,4 +1,5 @@
-﻿using C_PRL.Forms;
+﻿using A_DAL.Repositories;
+using C_PRL.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,10 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace C_PRL
 {
     public partial class DangNhap : Form
     {
+        DangNhapRepos _repos = new DangNhapRepos();
         public DangNhap()
         {
             InitializeComponent();
@@ -36,9 +39,27 @@ namespace C_PRL
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            TrangChu tt= new TrangChu();
-            tt.Show();
-            this.Hide();
+             
+            var data = _repos.GetOne().FirstOrDefault(x => x.SoDienThoai.ToString() == txt_Login.Text);
+           
+            if (data == null || data.MatKhau != txt_PassWord.Text)
+            {
+                return;
+            }
+            else
+            {
+                TrangChu trangchu = new TrangChu();
+                trangchu.Show();
+                trangchu.FormClosed += Login_FormClosed;
+                this.Hide();
+
+            }
         }
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
 }
