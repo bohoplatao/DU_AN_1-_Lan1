@@ -1,6 +1,6 @@
 ﻿namespace C_PRL.Forms
 {
-    partial class TrangChu
+    partial class Hang_va_Loai
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hang_va_Loai));
+            this.bt_TheLoai = new System.Windows.Forms.Button();
+            this.bt_HangSX = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bt_TaiKhoan = new System.Windows.Forms.Button();
             this.bt_BaoCao = new System.Windows.Forms.Button();
@@ -44,21 +46,44 @@
             this.bt_TK_LapTop = new System.Windows.Forms.Button();
             this.bt_Hang_TheLoai = new System.Windows.Forms.Button();
             this.bt_DanhMuc = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // bt_TheLoai
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 169);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.bt_TheLoai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bt_TheLoai.Location = new System.Drawing.Point(759, 85);
+            this.bt_TheLoai.Name = "bt_TheLoai";
+            this.bt_TheLoai.Size = new System.Drawing.Size(356, 63);
+            this.bt_TheLoai.TabIndex = 12;
+            this.bt_TheLoai.Text = "Thể Loại";
+            this.bt_TheLoai.UseVisualStyleBackColor = true;
+            this.bt_TheLoai.Click += new System.EventHandler(this.bt_TheLoai_Click);
+            // 
+            // bt_HangSX
+            // 
+            this.bt_HangSX.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bt_HangSX.Location = new System.Drawing.Point(387, 85);
+            this.bt_HangSX.Name = "bt_HangSX";
+            this.bt_HangSX.Size = new System.Drawing.Size(356, 63);
+            this.bt_HangSX.TabIndex = 11;
+            this.bt_HangSX.Text = "Nhà Cung Cấp";
+            this.bt_HangSX.UseVisualStyleBackColor = true;
+            this.bt_HangSX.Click += new System.EventHandler(this.bt_HangSX_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Brown;
+            this.label1.Location = new System.Drawing.Point(509, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(488, 54);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Nhà Cung Cấp - Thể Loại";
             // 
             // groupBox1
             // 
@@ -76,10 +101,10 @@
             this.groupBox1.Controls.Add(this.bt_Hang_TheLoai);
             this.groupBox1.Controls.Add(this.bt_DanhMuc);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(3, -1);
+            this.groupBox1.Location = new System.Drawing.Point(18, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(315, 646);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
             // bt_TaiKhoan
@@ -212,50 +237,62 @@
             this.bt_DanhMuc.UseVisualStyleBackColor = true;
             this.bt_DanhMuc.Click += new System.EventHandler(this.bt_DanhMuc_Click);
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(338, -1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(788, 463);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(297, 169);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // TrangChu
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(339, 154);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(775, 499);
+            this.panel1.TabIndex = 13;
+            // 
+            // Hang_va_Loai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1153, 650);
-            this.Controls.Add(this.pictureBox3);
+            this.ClientSize = new System.Drawing.Size(1153, 660);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bt_TheLoai);
+            this.Controls.Add(this.bt_HangSX);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "TrangChu";
-            this.Text = "Trang Chủ";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Name = "Hang_va_Loai";
+            this.Text = "Hang_va_Loai";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
+        private Button bt_TheLoai;
+        private Button bt_HangSX;
+        private Label label1;
         private GroupBox groupBox1;
-        private Button bt_DanhMuc;
-        private Button bt_Hang_TheLoai;
-        private Button bt_DM_LapTop;
-        private Button bt_DM_Nhanvien;
-        private Button bt_DM_KhachHang;
-        private Button bt_TK_NhanVien;
-        private Button bt_TK_HoaDon;
-        private Button bt_TK_KhachHang;
-        private Button bt_TK_LapTop;
-        private Button bt_TìmKiem;
-        private Button bt_HoaDon;
         private Button bt_TaiKhoan;
         private Button bt_BaoCao;
-        private PictureBox pictureBox3;
+        private Button bt_TK_NhanVien;
+        private Button bt_HoaDon;
+        private Button bt_DM_Nhanvien;
+        private Button bt_TK_HoaDon;
+        private Button bt_DM_KhachHang;
+        private Button bt_TìmKiem;
+        private Button bt_TK_KhachHang;
+        private Button bt_DM_LapTop;
+        private Button bt_TK_LapTop;
+        private Button bt_Hang_TheLoai;
+        private Button bt_DanhMuc;
+        private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }

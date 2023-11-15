@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace C_PRL.Forms
 {
-    public partial class TrangChu : Form
+    public partial class Hang_va_Loai : Form
     {
         private List<Button> childButtonsList1;
         private List<Button> childButtonsList2;
-        public TrangChu()
+        public Hang_va_Loai()
         {
             InitializeComponent();
             childButtonsList1 = new List<Button>();
@@ -31,9 +31,9 @@ namespace C_PRL.Forms
 
             HideChildButtons1();
             HideChildButtons2();
-            
         }
-        
+
+
         private void HideChildButtons1()
         {
             foreach (Button btcon in childButtonsList1)
@@ -64,6 +64,34 @@ namespace C_PRL.Forms
                 btcon.Visible = true;
             }
         }
+        private void bt_HangSX_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            bt_HangSX.BackColor = Color.Brown;
+            bt_TheLoai.BackColor = DefaultBackColor;
+            Hang hang = new Hang();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
+            
+        }
+
+        private void bt_TheLoai_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            bt_TheLoai.BackColor = Color.Brown;
+            bt_HangSX.BackColor = DefaultBackColor;
+            TheLoai tl = new TheLoai();
+            tl.TopLevel = false;
+            tl.FormBorderStyle = FormBorderStyle.None;
+            tl.Dock = DockStyle.Fill;
+            panel1.Controls.Add(tl);
+            tl.Show();
+           
+
+        }
 
         private void bt_DanhMuc_Click(object sender, EventArgs e)
         {
@@ -71,37 +99,6 @@ namespace C_PRL.Forms
                 HideChildButtons1();
             else
                 ShowChildButtons1();
-
-
-        }
-
-        private void bt_TìmKiem_Click(object sender, EventArgs e)
-        {
-            if (childButtonsList2[0].Visible)
-                HideChildButtons2();
-            else
-                ShowChildButtons2();
-        }
-
-        private void bt_Hang_TheLoai_Click(object sender, EventArgs e)
-        {
-            Hang_va_Loai hang_va_loai = new Hang_va_Loai();
-            hang_va_loai.Show();
-        }
-
-        private void bt_HoaDon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bt_BaoCao_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bt_TaiKhoan_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void bt_DM_LapTop_Click(object sender, EventArgs e)
@@ -117,6 +114,19 @@ namespace C_PRL.Forms
         private void bt_DM_Nhanvien_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bt_HoaDon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_TìmKiem_Click(object sender, EventArgs e)
+        {
+            if (childButtonsList2[0].Visible)
+                HideChildButtons2();
+            else
+                ShowChildButtons2();
         }
 
         private void bt_TK_LapTop_Click(object sender, EventArgs e)
@@ -138,7 +148,27 @@ namespace C_PRL.Forms
         {
 
         }
-    }
 
-   
+        private void bt_BaoCao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_TaiKhoan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            TrangChu tt = new TrangChu();
+            tt.Show();
+            this.Hide();
+        }
+
+        private void bt_Hang_TheLoai_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

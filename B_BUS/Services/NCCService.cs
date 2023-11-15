@@ -58,7 +58,7 @@ namespace B_BUS.Services
         public string Update(NhaCungCap ncc)
         {
             var clone = _repos.GetAllNCC(null).FirstOrDefault(x => x.MaNCC == ncc.MaNCC);
-            //clone.MaNCC = ncc.MaNCC;
+            clone.MaNCC = ncc.MaNCC;
             clone.TenNCC = ncc.TenNCC;
             clone.DiaChi = ncc.DiaChi;
            

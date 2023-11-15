@@ -12,37 +12,28 @@ using System.Windows.Forms;
 
 namespace C_PRL.Forms
 {
-    public partial class Hang_TheLoai : Form
+    public partial class Hang : Form
     {
+       
+
         private NCCService _service;
         int _idWhenClick;
-        public Hang_TheLoai()
+        public Hang()
         {
             InitializeComponent();
             _service = new NCCService();
-            grb_NhaCC.Hide();
-           bt_Them.Enabled = false;
-           bt_Sua.Enabled = false;
-           bt_Xoa.Enabled = false;
+            bt_Them.Enabled = false;
+            bt_Sua.Enabled = false;
+
+            bt_Xoa.Enabled = false;
+
+
 
         }
 
-        private void bt_HangSX_Click(object sender, EventArgs e)
-        {
-            bt_HangSX.BackColor = Color.Brown;
-            bt_TheLoai.BackColor = DefaultBackColor;
-            grb_NhaCC.Show();
-            
+        
 
-        }
-
-        private void bt_TheLoai_Click(object sender, EventArgs e)
-        {
-            bt_TheLoai.BackColor = Color.Brown;
-            bt_HangSX.BackColor = DefaultBackColor;
-            grb_NhaCC.Hide();
-            
-        }
+     
 
         //------------------------------------------------------------------------------------//
         private void bt_Show_Click(object sender, EventArgs e)
@@ -99,6 +90,7 @@ namespace C_PRL.Forms
         private void bt_Sua_Click(object sender, EventArgs e)
         {
             var ncc = new NhaCungCap();
+            ncc.MaNCC = int.Parse(txt_MaNCC.Text);
             ncc.TenNCC = txt_TenNCC.Text;
             ncc.DiaChi = txt_DiaChi.Text;
 
@@ -127,6 +119,8 @@ namespace C_PRL.Forms
                 return;
             }
         }
+
+       
 
        
     }
