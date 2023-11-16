@@ -85,8 +85,14 @@ namespace C_PRL.Forms
 
         private void bt_Hang_TheLoai_Click(object sender, EventArgs e)
         {
-            Hang_va_Loai hang_va_loai = new Hang_va_Loai();
-            hang_va_loai.Show();
+            panel1.Controls.Clear();
+          
+            Hang_va_Loai hang = new Hang_va_Loai();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
 
         private void bt_HoaDon_Click(object sender, EventArgs e)
@@ -106,7 +112,14 @@ namespace C_PRL.Forms
 
         private void bt_DM_LapTop_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
 
+            DM_LapTop hang = new DM_LapTop();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
 
         private void bt_DM_KhachHang_Click(object sender, EventArgs e)

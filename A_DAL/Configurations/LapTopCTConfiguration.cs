@@ -24,7 +24,7 @@ namespace A_DAL.Configurations
             builder.HasOne(p => p.LapTop).WithMany(p => p.LapTopCT).HasForeignKey(p => p.MaLaptop);
             builder.HasOne(p => p.ManHinh).WithMany(p => p.LapTopCT).HasForeignKey(p => p.MaManHinh);
             builder.HasOne(p => p.Ocung).WithMany(p => p.LapTopCT).HasForeignKey(p => p.MaOCung);
-            builder.HasOne(p => p.HinhAnh).WithMany(p => p.LapTopCT).HasForeignKey(p => p.MaHinhAnh);
+           
 
 
         }

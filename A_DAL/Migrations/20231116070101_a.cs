@@ -68,21 +68,6 @@ namespace A_DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "HinhAnh",
-                columns: table => new
-                {
-                    MaHinhAnh = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Src = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MaNguoiTao = table.Column<int>(type: "int", nullable: false),
-                    NgayTao = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HinhAnh", x => x.MaHinhAnh);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "KhachHang",
                 columns: table => new
                 {
@@ -276,7 +261,8 @@ namespace A_DAL.Migrations
                     TenLaptop = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CanNang = table.Column<float>(type: "real", nullable: false),
                     MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TrangThai = table.Column<bool>(type: "bit", nullable: false)
+                    TrangThai = table.Column<bool>(type: "bit", nullable: false),
+                    HinhAnh = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -344,12 +330,6 @@ namespace A_DAL.Migrations
                         column: x => x.MaChip,
                         principalTable: "Chip",
                         principalColumn: "MaChip",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_LapTopCT_HinhAnh_MaHinhAnh",
-                        column: x => x.MaHinhAnh,
-                        principalTable: "HinhAnh",
-                        principalColumn: "MaHinhAnh",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_LapTopCT_LapTop_MaLaptop",
@@ -500,11 +480,6 @@ namespace A_DAL.Migrations
                 column: "MaChip");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LapTopCT_MaHinhAnh",
-                table: "LapTopCT",
-                column: "MaHinhAnh");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_LapTopCT_MaLaptop",
                 table: "LapTopCT",
                 column: "MaLaptop");
@@ -591,9 +566,6 @@ namespace A_DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Chip");
-
-            migrationBuilder.DropTable(
-                name: "HinhAnh");
 
             migrationBuilder.DropTable(
                 name: "LapTop");

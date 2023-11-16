@@ -31,7 +31,7 @@ namespace A_DAL.Context
         public DbSet<CardDoHoa> CardDoHoas { get; set; }
         public DbSet<OCung> OCungs { get; set; }
         public DbSet<Chip> Chips { get; set; }
-        public DbSet<HinhAnh> HinhAnhs { get; set; }
+        
         public DbSet<DanhGia> DanhGias { get; set; }
         public DbSet<DiemThuong> DiemThuongs { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
@@ -48,7 +48,7 @@ namespace A_DAL.Context
         {
             // Thực hiện các ràng buộc kết nối
             base.OnConfiguring(optionsBuilder.
-                UseSqlServer(@"Data Source=LAPTOP-CXH2410\SQLEXPRESS;Initial Catalog=QL_LAPTOP_LAN4;Integrated Security=True"));
+                UseSqlServer(@"Data Source=LAPTOP-CXH2410\SQLEXPRESS;Initial Catalog=QL_LAPTOP_LAN5;Integrated Security=True"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

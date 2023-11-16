@@ -21,6 +21,7 @@ namespace A_DAL.Model
         public string MoTa { get; set; }
         public bool TrangThai { get; set; }
 
+        public string HinhAnh { get; set; }
         // Khai báo khóa phụ
         //public NhanVien NhanVien { get; set; }
       

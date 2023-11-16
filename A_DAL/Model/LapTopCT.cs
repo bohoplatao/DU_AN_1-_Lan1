@@ -32,7 +32,7 @@ namespace A_DAL.Model
         public int MaOCung { get; set; }
         public virtual OCung Ocung { get; set; }
         public int MaHinhAnh { get; set; }
-        public virtual HinhAnh HinhAnh { get; set; }
+        
         public float GiaBanDau { get; set; }
         public float GiaBan { get; set; }
 

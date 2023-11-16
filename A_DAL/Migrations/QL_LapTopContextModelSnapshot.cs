@@ -108,29 +108,6 @@ namespace A_DAL.Migrations
                     b.ToTable("DiemThuong");
                 });
 
-            modelBuilder.Entity("A_DAL.Model.HinhAnh", b =>
-                {
-                    b.Property<int>("MaHinhAnh")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MaHinhAnh"), 1L, 1);
-
-                    b.Property<int>("MaNguoiTao")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("NgayTao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Src")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MaHinhAnh");
-
-                    b.ToTable("HinhAnh");
-                });
-
             modelBuilder.Entity("A_DAL.Model.HoaDon", b =>
                 {
                     b.Property<int>("MaHoaDon")
@@ -260,6 +237,10 @@ namespace A_DAL.Migrations
                     b.Property<float>("CanNang")
                         .HasColumnType("real");
 
+                    b.Property<string>("HinhAnh")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("MaNhanVien")
                         .HasColumnType("int");
 
@@ -330,8 +311,6 @@ namespace A_DAL.Migrations
                     b.HasIndex("MaCardDoHoa");
 
                     b.HasIndex("MaChip");
-
-                    b.HasIndex("MaHinhAnh");
 
                     b.HasIndex("MaLaptop");
 
@@ -684,12 +663,6 @@ namespace A_DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("A_DAL.Model.HinhAnh", "HinhAnh")
-                        .WithMany("LapTopCT")
-                        .HasForeignKey("MaHinhAnh")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("A_DAL.Model.LapTop", "LapTop")
                         .WithMany("LapTopCT")
                         .HasForeignKey("MaLaptop")
@@ -735,8 +708,6 @@ namespace A_DAL.Migrations
                     b.Navigation("CardDoHoa");
 
                     b.Navigation("Chip");
-
-                    b.Navigation("HinhAnh");
 
                     b.Navigation("LapTop");
 
@@ -812,11 +783,6 @@ namespace A_DAL.Migrations
             modelBuilder.Entity("A_DAL.Model.DiemThuong", b =>
                 {
                     b.Navigation("HoaDon");
-                });
-
-            modelBuilder.Entity("A_DAL.Model.HinhAnh", b =>
-                {
-                    b.Navigation("LapTopCT");
                 });
 
             modelBuilder.Entity("A_DAL.Model.HoaDon", b =>
