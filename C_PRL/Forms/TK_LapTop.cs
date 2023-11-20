@@ -16,5 +16,7 @@ namespace C_PRL.Forms
         {
             InitializeComponent();
         }
+
+        
     }
 }

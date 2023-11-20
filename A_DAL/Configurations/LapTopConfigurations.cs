@@ -18,7 +18,7 @@ namespace A_DAL.Configurations
             builder.HasKey(p => new { p.MaLaptop });// Thiết lập khóa chính
 
          
-            builder.HasOne(p => p.NhanVien).WithMany(p => p.LapTops).HasForeignKey(p => p.MaNhanVien);
+            
           
 
         }

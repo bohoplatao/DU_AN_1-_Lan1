@@ -27,7 +27,7 @@ namespace A_DAL.Model
         public virtual ICollection<HoaDon> HoaDons { get; set; }
 
         
-        public virtual ICollection<LapTop> LapTops { get; set; }
+        
         
         public virtual ICollection<Sale> Sales { get; set; }
     }

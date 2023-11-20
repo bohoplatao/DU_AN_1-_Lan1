@@ -9,46 +9,46 @@ using System.Threading.Tasks;
 
 namespace A_DAL.Repositories
 {
-    public class LapTopRepos : ILapTop
+    public class NhanVienRepos : INhanVien
     {
         private QL_LapTopContext _context;
-        public LapTopRepos()
+        public NhanVienRepos()
         {
             _context = new QL_LapTopContext();
         }
-      
-
-        public bool CreateLapTop(LapTop lt)
+        public bool CreateNhanVien(NhanVien nv)
         {
-            _context.Add(lt);
+            _context.Add(nv);
+                _context.SaveChanges();
+            return true;
+        }
+
+        public bool DeleteNhanVien(NhanVien nv)
+        {
+            _context.Remove(nv);
             _context.SaveChanges();
             return true;
         }
 
        
 
-        public bool DeleteLapTop(LapTop lt)
+        public List<NhanVien> GetAllNhanVien(string name)
         {
-            _context.Remove(lt);
-            _context.SaveChanges();
-            return true;
+            return _context.NhanViens.ToList();
         }
 
-        public List<LapTop> GetAllLapTop(string name)
-        {
-            return _context.LapTops.ToList();
-        }
-
-        public List<LapTop> GetPhanLoaiLapTop(string name)
+        public List<NhanVien> GetNhanVienByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateLapTop(LapTop lt)
+        public bool UpdateNhanVien(NhanVien nv)
         {
-            _context.Update(lt);
+            _context.Update(nv);
             _context.SaveChanges();
             return true;
         }
+
+       
     }
 }

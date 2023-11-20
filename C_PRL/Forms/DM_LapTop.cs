@@ -1,4 +1,5 @@
-﻿using A_DAL.Model;
+﻿using A_DAL.Migrations;
+using A_DAL.Model;
 using B_BUS.Services;
 using System;
 using System.Collections.Generic;
@@ -37,18 +38,20 @@ namespace C_PRL.Forms
             dtg_ShowLT.ColumnCount = 8;
             dtg_ShowLT.Columns[0].Name = "STT";
             dtg_ShowLT.Columns[1].Name = "MÃ LT";
-            dtg_ShowLT.Columns[2].Name = "Mã NV";
-            dtg_ShowLT.Columns[3].Name = "Tên LT";
-            dtg_ShowLT.Columns[4].Name = "Cân nặng ";
-            dtg_ShowLT.Columns[5].Name = "Mô Tả";
-            dtg_ShowLT.Columns[6].Name = "Trạng Thái";
-            dtg_ShowLT.Columns[7].Name = "Ảnh";
+            
+            dtg_ShowLT.Columns[2].Name = "Tên LT";
+            dtg_ShowLT.Columns[3].Name = "Cân nặng ";
+            dtg_ShowLT.Columns[4].Name = "Mô Tả";
+            dtg_ShowLT.Columns[5].Name = "Trạng Thái";
+            dtg_ShowLT.Columns[6].Name = "Ảnh";
+            dtg_ShowLT.Columns[7].Name = "Số Lượng";
+
 
             dtg_ShowLT.Columns[1].Visible = false;
             dtg_ShowLT.Rows.Clear();
             foreach (var a in _service.GetAll(null))
             {
-                dtg_ShowLT.Rows.Add(stt++, a.MaNhanVien, a.MaNhanVien, a.TenLaptop, a.CanNang, a.MoTa, a.TrangThai, a.HinhAnh);
+                dtg_ShowLT.Rows.Add(stt++, a.MaLaptop,a.TenLaptop, a.CanNang, a.MoTa, a.TrangThai, a.HinhAnh,a.Soluong);
             }
         }
 
@@ -60,6 +63,8 @@ namespace C_PRL.Forms
             a.CanNang = float.Parse(txt_CanNang.Text);
             a.MoTa = txt_MoTa.Text;
             a.TrangThai = bool.Parse(txt_TrangThai.Text);
+            a.HinhAnh = ptb_Anh.ImageLocation;
+            a.Soluong = int.Parse(txt_Soluong.Text);
            
 
             var option = MessageBox.Show("Xac nhan Them", "Xac Nhan", MessageBoxButtons.YesNo);
@@ -75,43 +80,59 @@ namespace C_PRL.Forms
 
         private void bt_Sua_Click(object sender, EventArgs e)
         {
+            var a = new LapTop();
+            a.MaLaptop = int.Parse(txt_MaLapTop.Text);
+            a.TenLaptop = txt_TenLapTop.Text;
+            a.CanNang = float.Parse(txt_CanNang.Text);
+            a.MoTa = txt_MoTa.Text;
+            a.TrangThai = bool.Parse(txt_TrangThai.Text);
+            a.HinhAnh = ptb_Anh.ImageLocation;
+            a.Soluong = int.Parse(txt_Soluong.Text);
 
+            var option = MessageBox.Show("Xac nhan Sua", "Xac Nhan", MessageBoxButtons.YesNo);
+            if (option == DialogResult.Yes)
+            {
+                MessageBox.Show(_service.Update(a));
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void bt_Xoa_Click(object sender, EventArgs e)
         {
-
+            var a = new LapTop();
+            a.MaLaptop = _idWhenClick;
+            var option = MessageBox.Show("Xac nhan Xoa", "Xac Nhan", MessageBoxButtons.YesNo);
+            if (option == DialogResult.Yes)
+            {
+                MessageBox.Show(_service.Remove(a));
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void dtg_ShowLT_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int rowindex = e.RowIndex;
-            //_idWhenClick = int.Parse(dtg_ShowLT.Rows[rowindex].Cells[1].Value.ToString());
-            //var a = _service.GetAll(null).FirstOrDefault(x => x.MaLaptop == _idWhenClick);
-            //txt_MaLapTop.Text = a.MaLaptop.ToString();
-            //txt_MaNV.Text = a.MaNhanVien.ToString();
-            //txt_TenLapTop.Text = a.TenLaptop;
-            //txt_CanNang.Text = a.CanNang.ToString();
-            //txt_MoTa.Text = a.MoTa;
-            //txt_TrangThai.Text = a.TrangThai.ToString();
-            //ptb_Anh.ImageLocation = a.HinhAnh;
-            //ptb_Anh.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            try
-            {
-                int index = e.RowIndex;
-
-                _idWhenClick = int.Parse(dtg_ShowLT.Rows[index].Cells[1].Value.ToString());
-                var a = _service.GetAll(null).FirstOrDefault(x => x.MaLaptop == _idWhenClick);
-                txt_MaLapTop.Text = a.MaLaptop.ToString();
-                txt_MaNV.Text = a.MaNhanVien.ToString();
-                txt_TenLapTop.Text = a.TenLaptop;
-                txt_CanNang.Text = a.CanNang.ToString();
-                txt_MoTa.Text = a.MoTa;
-                txt_TrangThai.Text = a.TrangThai.ToString();
-                ptb_Anh.ImageLocation = a.HinhAnh;
-                ptb_Anh.SizeMode = PictureBoxSizeMode.StretchImage;
-
-
-            }
+            int rowindex = e.RowIndex;
+            _idWhenClick = int.Parse(dtg_ShowLT.Rows[rowindex].Cells[1].Value.ToString());
+            var a = _service.GetAll(null).FirstOrDefault(x => x.MaLaptop == _idWhenClick);
+            txt_MaLapTop.Text = a.MaLaptop.ToString();
+            txt_TenLapTop.Text = a.TenLaptop;
+            txt_CanNang.Text = a.CanNang.ToString();
+            txt_MoTa.Text = a.MoTa;
+            txt_TrangThai.Text = a.TrangThai.ToString();
+            ptb_Anh.ImageLocation = a.HinhAnh;
+            ptb_Anh.SizeMode = PictureBoxSizeMode.StretchImage;
+            txt_Soluong.Text = a.Soluong.ToString();
         }
+
+
+    }
+}
+    
+
+

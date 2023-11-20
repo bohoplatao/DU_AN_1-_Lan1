@@ -43,16 +43,16 @@
             this.txt_CanNang = new System.Windows.Forms.TextBox();
             this.txt_MoTa = new System.Windows.Forms.TextBox();
             this.txt_TenLapTop = new System.Windows.Forms.TextBox();
-            this.txt_MaNV = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_MaLapTop = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_Soluong = new System.Windows.Forms.TextBox();
             this.grb_NhaCC.SuspendLayout();
             this.grb_TacVu.SuspendLayout();
             this.grb_DSNCC.SuspendLayout();
@@ -148,23 +148,23 @@
             // 
             // grb_TTNCC
             // 
+            this.grb_TTNCC.Controls.Add(this.txt_Soluong);
+            this.grb_TTNCC.Controls.Add(this.label3);
             this.grb_TTNCC.Controls.Add(this.bt_ThemAanh);
             this.grb_TTNCC.Controls.Add(this.ptb_Anh);
             this.grb_TTNCC.Controls.Add(this.txt_TrangThai);
             this.grb_TTNCC.Controls.Add(this.txt_CanNang);
             this.grb_TTNCC.Controls.Add(this.txt_MoTa);
             this.grb_TTNCC.Controls.Add(this.txt_TenLapTop);
-            this.grb_TTNCC.Controls.Add(this.txt_MaNV);
             this.grb_TTNCC.Controls.Add(this.label7);
             this.grb_TTNCC.Controls.Add(this.label6);
             this.grb_TTNCC.Controls.Add(this.label5);
             this.grb_TTNCC.Controls.Add(this.txt_MaLapTop);
             this.grb_TTNCC.Controls.Add(this.label2);
             this.grb_TTNCC.Controls.Add(this.label4);
-            this.grb_TTNCC.Controls.Add(this.label3);
             this.grb_TTNCC.Location = new System.Drawing.Point(16, 26);
             this.grb_TTNCC.Name = "grb_TTNCC";
-            this.grb_TTNCC.Size = new System.Drawing.Size(717, 230);
+            this.grb_TTNCC.Size = new System.Drawing.Size(717, 249);
             this.grb_TTNCC.TabIndex = 0;
             this.grb_TTNCC.TabStop = false;
             this.grb_TTNCC.Text = "Thông Tin LapTop";
@@ -189,43 +189,36 @@
             // 
             // txt_TrangThai
             // 
-            this.txt_TrangThai.Location = new System.Drawing.Point(144, 202);
+            this.txt_TrangThai.Location = new System.Drawing.Point(144, 174);
             this.txt_TrangThai.Name = "txt_TrangThai";
             this.txt_TrangThai.Size = new System.Drawing.Size(244, 27);
             this.txt_TrangThai.TabIndex = 13;
             // 
             // txt_CanNang
             // 
-            this.txt_CanNang.Location = new System.Drawing.Point(144, 136);
+            this.txt_CanNang.Location = new System.Drawing.Point(144, 105);
             this.txt_CanNang.Name = "txt_CanNang";
             this.txt_CanNang.Size = new System.Drawing.Size(244, 27);
             this.txt_CanNang.TabIndex = 12;
             // 
             // txt_MoTa
             // 
-            this.txt_MoTa.Location = new System.Drawing.Point(144, 169);
+            this.txt_MoTa.Location = new System.Drawing.Point(144, 141);
             this.txt_MoTa.Name = "txt_MoTa";
             this.txt_MoTa.Size = new System.Drawing.Size(244, 27);
             this.txt_MoTa.TabIndex = 11;
             // 
             // txt_TenLapTop
             // 
-            this.txt_TenLapTop.Location = new System.Drawing.Point(144, 99);
+            this.txt_TenLapTop.Location = new System.Drawing.Point(144, 67);
             this.txt_TenLapTop.Name = "txt_TenLapTop";
             this.txt_TenLapTop.Size = new System.Drawing.Size(244, 27);
             this.txt_TenLapTop.TabIndex = 10;
             // 
-            // txt_MaNV
-            // 
-            this.txt_MaNV.Location = new System.Drawing.Point(144, 61);
-            this.txt_MaNV.Name = "txt_MaNV";
-            this.txt_MaNV.Size = new System.Drawing.Size(244, 27);
-            this.txt_MaNV.TabIndex = 9;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 201);
+            this.label7.Location = new System.Drawing.Point(19, 174);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 8;
@@ -234,7 +227,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 168);
+            this.label6.Location = new System.Drawing.Point(19, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 7;
@@ -243,7 +236,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 134);
+            this.label5.Location = new System.Drawing.Point(19, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 6;
@@ -268,20 +261,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 102);
+            this.label4.Location = new System.Drawing.Point(18, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "Tên LapTop";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Mã Nhân Viên";
             // 
             // label1
             // 
@@ -297,6 +281,22 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 212);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Số Lượng";
+            // 
+            // txt_Soluong
+            // 
+            this.txt_Soluong.Location = new System.Drawing.Point(144, 212);
+            this.txt_Soluong.Name = "txt_Soluong";
+            this.txt_Soluong.Size = new System.Drawing.Size(244, 27);
+            this.txt_Soluong.TabIndex = 17;
             // 
             // DM_LapTop
             // 
@@ -333,7 +333,6 @@
         private TextBox txt_MaLapTop;
         private Label label2;
         private Label label4;
-        private Label label3;
         private Label label1;
         private Button bt_ThemAanh;
         private PictureBox ptb_Anh;
@@ -341,10 +340,11 @@
         private TextBox txt_CanNang;
         private TextBox txt_MoTa;
         private TextBox txt_TenLapTop;
-        private TextBox txt_MaNV;
         private Label label7;
         private Label label6;
         private Label label5;
         private OpenFileDialog openFileDialog1;
+        private TextBox txt_Soluong;
+        private Label label3;
     }
 }

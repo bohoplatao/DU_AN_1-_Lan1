@@ -4,6 +4,7 @@ using A_DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace A_DAL.Migrations
 {
     [DbContext(typeof(QL_LapTopContext))]
-    partial class QL_LapTopContextModelSnapshot : ModelSnapshot
+    [Migration("20231117010308_test4")]
+    partial class test4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -241,12 +243,12 @@ namespace A_DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MaNhanVien")
+                        .HasColumnType("int");
+
                     b.Property<string>("MoTa")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Soluong")
-                        .HasColumnType("int");
 
                     b.Property<string>("TenLaptop")
                         .IsRequired()
@@ -256,6 +258,8 @@ namespace A_DAL.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("MaLaptop");
+
+                    b.HasIndex("MaNhanVien");
 
                     b.ToTable("LapTop");
                 });
@@ -636,6 +640,17 @@ namespace A_DAL.Migrations
                     b.Navigation("LapTopCT");
                 });
 
+            modelBuilder.Entity("A_DAL.Model.LapTop", b =>
+                {
+                    b.HasOne("A_DAL.Model.NhanVien", "NhanVien")
+                        .WithMany("LapTops")
+                        .HasForeignKey("MaNhanVien")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("NhanVien");
+                });
+
             modelBuilder.Entity("A_DAL.Model.LapTopCT", b =>
                 {
                     b.HasOne("A_DAL.Model.CardDoHoa", "CardDoHoa")
@@ -812,6 +827,8 @@ namespace A_DAL.Migrations
             modelBuilder.Entity("A_DAL.Model.NhanVien", b =>
                 {
                     b.Navigation("HoaDons");
+
+                    b.Navigation("LapTops");
 
                     b.Navigation("Sales");
                 });

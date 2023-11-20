@@ -13,18 +13,16 @@ namespace A_DAL.Model
     {
         
         public int MaLaptop { get; set; }
-        public int MaNhanVien { get; set; }
         
-        public virtual NhanVien NhanVien { get; set; }
         public string TenLaptop { get; set; }
         public float CanNang { get; set; }
         public string MoTa { get; set; }
         public bool TrangThai { get; set; }
 
         public string HinhAnh { get; set; }
-        // Khai báo khóa phụ
-        //public NhanVien NhanVien { get; set; }
-      
+        public int Soluong { get; set; }
+
+
         public virtual ICollection<LapTopCT> LapTopCT { get; set; }
     }
 }

@@ -14,12 +14,12 @@ namespace B_BUS.Services
     {
         private LapTopRepos _repos;
         
-        private LapTopCTRepos _lapTopCTRepos;
+       
         public LapTopSerVice()
         {
             _repos = new LapTopRepos();
             
-            _lapTopCTRepos = new LapTopCTRepos();
+            
         }
         public string Add(LapTop lt)
         {
@@ -62,11 +62,13 @@ namespace B_BUS.Services
         {
             var clone = _repos.GetAllLapTop(null).FirstOrDefault(x => x.MaLaptop == lt.MaLaptop);
             clone.MaLaptop = lt.MaLaptop;
-            clone.MaNhanVien = lt.MaNhanVien;
+            
             clone.TenLaptop = lt.TenLaptop;
             clone.CanNang =lt.CanNang;
             clone.MoTa =lt.MoTa;
             clone.TrangThai = lt.TrangThai;
+            clone.HinhAnh = lt.HinhAnh;
+            clone.Soluong = lt.Soluong;
 
             if (_repos.UpdateLapTop(clone) == true)
             {

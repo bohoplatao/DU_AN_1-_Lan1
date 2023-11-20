@@ -107,7 +107,14 @@ namespace C_PRL.Forms
 
         private void bt_TaiKhoan_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            // Kiểm tra kết quả người dùng chọn
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+                this.Close();
+            }
         }
 
         private void bt_DM_LapTop_Click(object sender, EventArgs e)
@@ -124,17 +131,38 @@ namespace C_PRL.Forms
 
         private void bt_DM_KhachHang_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
 
+            DM_KhachHang hang = new DM_KhachHang();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
 
         private void bt_DM_Nhanvien_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
 
+            DM_NhanVien hang = new DM_NhanVien();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
 
         private void bt_TK_LapTop_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
 
+            TK_LapTop hang = new TK_LapTop();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
 
         private void bt_TK_KhachHang_Click(object sender, EventArgs e)
