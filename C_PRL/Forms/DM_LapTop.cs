@@ -112,11 +112,6 @@ namespace C_PRL.Forms
                 ptb_Anh.ImageLocation = a.HinhAnh;
                 ptb_Anh.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            }
-            catch (Exception)
-            {
 
             }
         }
-    }
-}
