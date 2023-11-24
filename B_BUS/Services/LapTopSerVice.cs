@@ -35,19 +35,26 @@ namespace B_BUS.Services
 
         public List<LapTop> GetAll(string search)
         {
-            if (search == null)
+            int searhInt;
+
+            if (string.IsNullOrEmpty(search))
             {
-                return _repos.GetAllLapTop(null).ToList();
+                return _repos.GetAllLapTop().ToList();
+            }
+            else if (int.TryParse(search, out searhInt))
+            {
+                return _repos.GetLTByGia(searhInt).ToList();
             }
             else
             {
-                return _repos.GetAllLapTop(null).Where(x => x.TenLaptop.Contains(search)).ToList();
+                return _repos.GetPhanLoaiLapTop(search).ToList();
             }
+            
         }
 
         public string Remove(LapTop lt)
         {
-            var clone = _repos.GetAllLapTop(null).FirstOrDefault(x => x.MaLaptop == lt.MaLaptop);
+            var clone = _repos.GetAllLapTop().FirstOrDefault(x => x.MaLaptop == lt.MaLaptop);
             if (_repos.DeleteLapTop(clone) == true)
             {
                 return "Xoa Thanh Cong";
@@ -60,7 +67,7 @@ namespace B_BUS.Services
 
         public string Update(LapTop lt)
         {
-            var clone = _repos.GetAllLapTop(null).FirstOrDefault(x => x.MaLaptop == lt.MaLaptop);
+            var clone = _repos.GetAllLapTop().FirstOrDefault(x => x.MaLaptop == lt.MaLaptop);
             clone.MaLaptop = lt.MaLaptop;
             
             clone.TenLaptop = lt.TenLaptop;

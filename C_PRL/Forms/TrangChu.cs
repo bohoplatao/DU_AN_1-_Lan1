@@ -97,7 +97,14 @@ namespace C_PRL.Forms
 
         private void bt_HoaDon_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
 
+            HoaDon hang = new HoaDon();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
 
         private void bt_BaoCao_Click(object sender, EventArgs e)
@@ -107,14 +114,20 @@ namespace C_PRL.Forms
 
         private void bt_TaiKhoan_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Kiểm tra kết quả người dùng chọn
+            DialogResult result = MessageBox.Show("Bạn chắc chắn muốn thoát???", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
             if (result == DialogResult.Yes)
             {
+                MessageBox.Show("Thoát thành công", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Exit();
-                this.Close();
             }
+
+            if (result == DialogResult.No)
+            {
+                MessageBox.Show("Tiếp tục chương trình", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void bt_DM_LapTop_Click(object sender, EventArgs e)
@@ -167,7 +180,14 @@ namespace C_PRL.Forms
 
         private void bt_TK_KhachHang_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
 
+            TK_KhachHang hang = new TK_KhachHang();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
 
         private void bt_TK_HoaDon_Click(object sender, EventArgs e)
@@ -177,7 +197,14 @@ namespace C_PRL.Forms
 
         private void bt_TK_NhanVien_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
 
+            TK_Nhanvien hang = new TK_Nhanvien();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
     }
 

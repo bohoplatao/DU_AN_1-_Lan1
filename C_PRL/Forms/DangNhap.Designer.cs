@@ -46,7 +46,7 @@
             this.btn_Cancel.BackColor = System.Drawing.Color.IndianRed;
             this.btn_Cancel.Location = new System.Drawing.Point(365, 342);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(94, 29);
+            this.btn_Cancel.Size = new System.Drawing.Size(107, 48);
             this.btn_Cancel.TabIndex = 39;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = false;
@@ -55,9 +55,9 @@
             // btn_Login
             // 
             this.btn_Login.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Login.Location = new System.Drawing.Point(215, 342);
+            this.btn_Login.Location = new System.Drawing.Point(186, 342);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(94, 29);
+            this.btn_Login.Size = new System.Drawing.Size(123, 48);
             this.btn_Login.TabIndex = 38;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = false;

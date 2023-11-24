@@ -32,7 +32,10 @@ namespace A_DAL.Model
         public int MaOCung { get; set; }
         public virtual OCung Ocung { get; set; }
         public int MaHinhAnh { get; set; }
-        
+
+       
+
+
         public float GiaBanDau { get; set; }
         public float GiaBan { get; set; }
 
@@ -51,6 +54,7 @@ namespace A_DAL.Model
         
         public virtual List<SaleCT> SaleCTs { get; set; }
       
-        public virtual List<HoaDonCT> hoaDonCTs { get; set; }
+        //public virtual List<HoaDonCT> hoaDonCTs { get; set; }
+        public virtual List<Serial> Serials { get; set; }
     }
 }

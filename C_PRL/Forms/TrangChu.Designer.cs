@@ -87,7 +87,7 @@
             this.bt_TaiKhoan.Name = "bt_TaiKhoan";
             this.bt_TaiKhoan.Size = new System.Drawing.Size(163, 47);
             this.bt_TaiKhoan.TabIndex = 12;
-            this.bt_TaiKhoan.Text = "Đăng Xuất";
+            this.bt_TaiKhoan.Text = "Đăng Xuất ";
             this.bt_TaiKhoan.UseVisualStyleBackColor = true;
             this.bt_TaiKhoan.Click += new System.EventHandler(this.bt_TaiKhoan_Click);
             // 

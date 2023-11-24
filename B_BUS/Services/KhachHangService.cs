@@ -31,19 +31,26 @@ namespace B_BUS.Services
 
         public List<KhachHang> GetAll(string search)
         {
-            if (search == null)
+            
+            
+            decimal searchNumber;
+            if (string.IsNullOrEmpty(search))
             {
-                return _repos.GetAllKH(null).ToList();
+                return _repos.GetAllKH().ToList();
+            }
+            else if (decimal.TryParse(search, out searchNumber))
+            {
+                return _repos.GetKHBySDT(searchNumber).ToList();
             }
             else
             {
-                return _repos.GetAllKH(null).Where(x => x.TenKhachHang.Contains(search)).ToList();
-            };
+                return _repos.GetKHByName(search).ToList();
+            }
         }
 
         public string Remove(KhachHang kh)
         {
-            var clone = _repos.GetAllKH(null).FirstOrDefault(x => x.MaKhachHang == kh.MaKhachHang);
+            var clone = _repos.GetAllKH().FirstOrDefault(x => x.MaKhachHang == kh.MaKhachHang);
             if (_repos.DeleteKH(clone) == true)
             {
                 return "Xoa Thanh Cong";
@@ -56,7 +63,7 @@ namespace B_BUS.Services
 
         public string Update(KhachHang kh)
         {
-            var clone = _repos.GetAllKH(null).FirstOrDefault(x => x.MaKhachHang == kh.MaKhachHang);
+            var clone = _repos.GetAllKH().FirstOrDefault(x => x.MaKhachHang == kh.MaKhachHang);
             clone.MaKhachHang = kh.MaKhachHang;
             clone.TenKhachHang = kh.TenKhachHang;
             clone.DiaChi = kh.DiaChi;

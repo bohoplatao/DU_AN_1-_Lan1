@@ -32,14 +32,19 @@ namespace A_DAL.Repositories
 
        
 
-        public List<NhanVien> GetAllNhanVien(string name)
+        public List<NhanVien> GetAllNhanVien()
         {
             return _context.NhanViens.ToList();
         }
 
         public List<NhanVien> GetNhanVienByName(string name)
         {
-            throw new NotImplementedException();
+            return _context.NhanViens.Where(p => p.TenNhanVien.Contains(name)  || p.DiaChi.Contains(name)).ToList();
+        }
+        public List<NhanVien> GetBySDT(decimal sdt)
+        {
+            string sdtString = sdt.ToString().Trim();
+            return _context.NhanViens.Where(p => p.SoDienThoai.ToString().Contains(sdtString.ToString())).ToList();
         }
 
         public bool UpdateNhanVien(NhanVien nv)
@@ -49,6 +54,9 @@ namespace A_DAL.Repositories
             return true;
         }
 
-       
+        public List<NhanVien> GetAllNhanVien(string name)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

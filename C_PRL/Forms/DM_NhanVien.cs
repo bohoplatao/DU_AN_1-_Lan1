@@ -107,7 +107,7 @@ namespace C_PRL.Forms
             var option = MessageBox.Show("Xac nhan Them", "Xac Nhan", MessageBoxButtons.YesNo);
             if (option == DialogResult.Yes)
             {
-                MessageBox.Show(_service.Add(a));
+                MessageBox.Show(_service.Update(a));
             }
             else
             {
@@ -149,6 +149,18 @@ namespace C_PRL.Forms
 
 
             
+        }
+
+        private void dtg_ShowNV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 7) // Thay đổi số 2 thành chỉ số cột mật khẩu của bạn
+            {
+                if (e.Value != null)
+                {
+                    // Thay thế giá trị hiển thị thành ký tự '**'
+                    e.Value = new string('*', e.Value.ToString().Length);
+                }
+            }
         }
     }
 }

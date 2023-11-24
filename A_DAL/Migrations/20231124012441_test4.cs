@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace A_DAL.Migrations
 {
-    public partial class a : Migration
+    public partial class test4 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -83,6 +83,24 @@ namespace A_DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_KhachHang", x => x.MaKhachHang);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LapTop",
+                columns: table => new
+                {
+                    MaLaptop = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenLaptop = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CanNang = table.Column<float>(type: "real", nullable: false),
+                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TrangThai = table.Column<bool>(type: "bit", nullable: false),
+                    HinhAnh = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Soluong = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LapTop", x => x.MaLaptop);
                 });
 
             migrationBuilder.CreateTable(
@@ -226,7 +244,8 @@ namespace A_DAL.Migrations
                     SoDienThoai = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     NgayMua = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TongTien = table.Column<float>(type: "real", nullable: false),
-                    ChuThich = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ChuThich = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TrangThai = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -245,30 +264,6 @@ namespace A_DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_HoaDon_NhanVien_MaNhanVien",
-                        column: x => x.MaNhanVien,
-                        principalTable: "NhanVien",
-                        principalColumn: "MaNhanVien",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "LapTop",
-                columns: table => new
-                {
-                    MaLaptop = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MaNhanVien = table.Column<int>(type: "int", nullable: false),
-                    TenLaptop = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CanNang = table.Column<float>(type: "real", nullable: false),
-                    MoTa = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TrangThai = table.Column<bool>(type: "bit", nullable: false),
-                    HinhAnh = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_LapTop", x => x.MaLaptop);
-                    table.ForeignKey(
-                        name: "FK_LapTop_NhanVien_MaNhanVien",
                         column: x => x.MaNhanVien,
                         principalTable: "NhanVien",
                         principalColumn: "MaNhanVien",
@@ -376,42 +371,6 @@ namespace A_DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "HoaDonCT",
-                columns: table => new
-                {
-                    MaHoaDonChiTiet = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MaLaptopChiTiet = table.Column<int>(type: "int", nullable: false),
-                    MaHoaDon = table.Column<int>(type: "int", nullable: false),
-                    MaDanhGia = table.Column<int>(type: "int", nullable: false),
-                    SoLuongNhap = table.Column<int>(type: "int", nullable: false),
-                    SoLuongXuat = table.Column<int>(type: "int", nullable: false),
-                    Gia = table.Column<float>(type: "real", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HoaDonCT", x => x.MaHoaDonChiTiet);
-                    table.ForeignKey(
-                        name: "FK_HoaDonCT_DanhGia_MaDanhGia",
-                        column: x => x.MaDanhGia,
-                        principalTable: "DanhGia",
-                        principalColumn: "MaDanhGia",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_HoaDonCT_HoaDon_MaLaptopChiTiet",
-                        column: x => x.MaLaptopChiTiet,
-                        principalTable: "HoaDon",
-                        principalColumn: "MaHoaDon",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_HoaDonCT_LapTopCT_MaLaptopChiTiet",
-                        column: x => x.MaLaptopChiTiet,
-                        principalTable: "LapTopCT",
-                        principalColumn: "MaLaptopChiTiet",
-                        onDelete: ReferentialAction.NoAction);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "SaleCT",
                 columns: table => new
                 {
@@ -436,6 +395,69 @@ namespace A_DAL.Migrations
                         column: x => x.MaSale,
                         principalTable: "Sale",
                         principalColumn: "MaSale",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Serial",
+                columns: table => new
+                {
+                    MaSerial = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MaLaptopChiTiet = table.Column<int>(type: "int", nullable: false),
+                    TrangThai = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Serial", x => x.MaSerial);
+                    table.ForeignKey(
+                        name: "FK_Serial_LapTopCT_MaLaptopChiTiet",
+                        column: x => x.MaLaptopChiTiet,
+                        principalTable: "LapTopCT",
+                        principalColumn: "MaLaptopChiTiet",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HoaDonCT",
+                columns: table => new
+                {
+                    MaHoaDonChiTiet = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MaHoaDon = table.Column<int>(type: "int", nullable: false),
+                    MaDanhGia = table.Column<int>(type: "int", nullable: false),
+                    SoLuongNhap = table.Column<int>(type: "int", nullable: false),
+                    SoLuongXuat = table.Column<int>(type: "int", nullable: false),
+                    MaSerial = table.Column<int>(type: "int", nullable: false),
+                    Gia = table.Column<float>(type: "real", nullable: false),
+                    SerialMaSerial = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HoaDonCT", x => x.MaHoaDonChiTiet);
+                    table.ForeignKey(
+                        name: "FK_HoaDonCT_DanhGia_MaDanhGia",
+                        column: x => x.MaDanhGia,
+                        principalTable: "DanhGia",
+                        principalColumn: "MaDanhGia",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_HoaDonCT_HoaDon_MaHoaDon",
+                        column: x => x.MaHoaDon,
+                        principalTable: "HoaDon",
+                        principalColumn: "MaHoaDon",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_HoaDonCT_Serial_MaSerial",
+                        column: x => x.MaSerial,
+                        principalTable: "Serial",
+                        principalColumn: "MaSerial",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_HoaDonCT_Serial_SerialMaSerial",
+                        column: x => x.SerialMaSerial,
+                        principalTable: "Serial",
+                        principalColumn: "MaSerial",
                         onDelete: ReferentialAction.NoAction);
                 });
 
@@ -460,14 +482,20 @@ namespace A_DAL.Migrations
                 column: "MaDanhGia");
 
             migrationBuilder.CreateIndex(
-                name: "IX_HoaDonCT_MaLaptopChiTiet",
+                name: "IX_HoaDonCT_MaHoaDon",
                 table: "HoaDonCT",
-                column: "MaLaptopChiTiet");
+                column: "MaHoaDon");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LapTop_MaNhanVien",
-                table: "LapTop",
-                column: "MaNhanVien");
+                name: "IX_HoaDonCT_MaSerial",
+                table: "HoaDonCT",
+                column: "MaSerial",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HoaDonCT_SerialMaSerial",
+                table: "HoaDonCT",
+                column: "SerialMaSerial");
 
             migrationBuilder.CreateIndex(
                 name: "IX_LapTopCT_MaCardDoHoa",
@@ -533,6 +561,11 @@ namespace A_DAL.Migrations
                 name: "IX_SaleCT_MaSale",
                 table: "SaleCT",
                 column: "MaSale");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Serial_MaLaptopChiTiet",
+                table: "Serial",
+                column: "MaLaptopChiTiet");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -550,7 +583,7 @@ namespace A_DAL.Migrations
                 name: "HoaDon");
 
             migrationBuilder.DropTable(
-                name: "LapTopCT");
+                name: "Serial");
 
             migrationBuilder.DropTable(
                 name: "Sale");
@@ -560,6 +593,12 @@ namespace A_DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "KhachHang");
+
+            migrationBuilder.DropTable(
+                name: "LapTopCT");
+
+            migrationBuilder.DropTable(
+                name: "NhanVien");
 
             migrationBuilder.DropTable(
                 name: "CardDoHoa");
@@ -587,9 +626,6 @@ namespace A_DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Ram");
-
-            migrationBuilder.DropTable(
-                name: "NhanVien");
 
             migrationBuilder.DropTable(
                 name: "NhaCungCap");

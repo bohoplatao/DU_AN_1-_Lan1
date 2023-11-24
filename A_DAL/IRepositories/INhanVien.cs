@@ -11,6 +11,7 @@ namespace A_DAL.IRepositories
     {
         public List<NhanVien> GetAllNhanVien(string name);
         List<NhanVien> GetNhanVienByName(string name);
+        List<NhanVien> GetBySDT(decimal sdt);
 
         public bool CreateNhanVien(NhanVien nv);
         public bool UpdateNhanVien(NhanVien nv);

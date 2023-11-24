@@ -19,6 +19,8 @@ namespace C_PRL
         public DangNhap()
         {
             InitializeComponent();
+
+            
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -48,18 +50,27 @@ namespace C_PRL
             }
             else
             {
+               
+
                 TrangChu trangchu = new TrangChu();
                 trangchu.Show();
                 trangchu.FormClosed += Login_FormClosed;
                 this.Hide();
 
             }
+            
+
+            
+           
+
+
         }
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
         
+
+
     }
 }

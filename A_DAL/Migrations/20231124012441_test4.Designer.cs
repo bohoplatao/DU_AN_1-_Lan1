@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace A_DAL.Migrations
 {
     [DbContext(typeof(QL_LapTopContext))]
-    [Migration("20231117011418_test8")]
-    partial class test8
+    [Migration("20231124012441_test4")]
+    partial class test4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -148,6 +148,9 @@ namespace A_DAL.Migrations
                     b.Property<float>("TongTien")
                         .HasColumnType("real");
 
+                    b.Property<int>("TrangThai")
+                        .HasColumnType("int");
+
                     b.HasKey("MaHoaDon");
 
                     b.HasIndex("MaDiemThuong");
@@ -176,7 +179,10 @@ namespace A_DAL.Migrations
                     b.Property<int>("MaHoaDon")
                         .HasColumnType("int");
 
-                    b.Property<int>("MaLaptopChiTiet")
+                    b.Property<int>("MaSerial")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SerialMaSerial")
                         .HasColumnType("int");
 
                     b.Property<int>("SoLuongNhap")
@@ -189,7 +195,12 @@ namespace A_DAL.Migrations
 
                     b.HasIndex("MaDanhGia");
 
-                    b.HasIndex("MaLaptopChiTiet");
+                    b.HasIndex("MaHoaDon");
+
+                    b.HasIndex("MaSerial")
+                        .IsUnique();
+
+                    b.HasIndex("SerialMaSerial");
 
                     b.ToTable("HoaDonCT");
                 });
@@ -584,6 +595,27 @@ namespace A_DAL.Migrations
                     b.ToTable("SaleCT");
                 });
 
+            modelBuilder.Entity("A_DAL.Model.Serial", b =>
+                {
+                    b.Property<int>("MaSerial")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MaSerial"), 1L, 1);
+
+                    b.Property<int>("MaLaptopChiTiet")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("TrangThai")
+                        .HasColumnType("bit");
+
+                    b.HasKey("MaSerial");
+
+                    b.HasIndex("MaLaptopChiTiet");
+
+                    b.ToTable("Serial");
+                });
+
             modelBuilder.Entity("A_DAL.Model.HoaDon", b =>
                 {
                     b.HasOne("A_DAL.Model.DiemThuong", "DiemThuong")
@@ -621,13 +653,19 @@ namespace A_DAL.Migrations
 
                     b.HasOne("A_DAL.Model.HoaDon", "HoaDon")
                         .WithMany("HoaDonCTs")
-                        .HasForeignKey("MaLaptopChiTiet")
+                        .HasForeignKey("MaHoaDon")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("A_DAL.Model.LapTopCT", "LapTopCT")
-                        .WithMany("hoaDonCTs")
-                        .HasForeignKey("MaLaptopChiTiet")
+                    b.HasOne("A_DAL.Model.Serial", null)
+                        .WithOne("HoaDonCT")
+                        .HasForeignKey("A_DAL.Model.HoaDonCT", "MaSerial")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("A_DAL.Model.Serial", "Serial")
+                        .WithMany()
+                        .HasForeignKey("SerialMaSerial")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -635,7 +673,7 @@ namespace A_DAL.Migrations
 
                     b.Navigation("HoaDon");
 
-                    b.Navigation("LapTopCT");
+                    b.Navigation("Serial");
                 });
 
             modelBuilder.Entity("A_DAL.Model.LapTopCT", b =>
@@ -754,6 +792,17 @@ namespace A_DAL.Migrations
                     b.Navigation("Sale");
                 });
 
+            modelBuilder.Entity("A_DAL.Model.Serial", b =>
+                {
+                    b.HasOne("A_DAL.Model.LapTopCT", "LapTopCT")
+                        .WithMany("Serials")
+                        .HasForeignKey("MaLaptopChiTiet")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LapTopCT");
+                });
+
             modelBuilder.Entity("A_DAL.Model.CardDoHoa", b =>
                 {
                     b.Navigation("LapTopCT");
@@ -793,7 +842,7 @@ namespace A_DAL.Migrations
                 {
                     b.Navigation("SaleCTs");
 
-                    b.Navigation("hoaDonCTs");
+                    b.Navigation("Serials");
                 });
 
             modelBuilder.Entity("A_DAL.Model.LoaiHang", b =>
@@ -841,6 +890,12 @@ namespace A_DAL.Migrations
             modelBuilder.Entity("A_DAL.Model.Sale", b =>
                 {
                     b.Navigation("SaleCT");
+                });
+
+            modelBuilder.Entity("A_DAL.Model.Serial", b =>
+                {
+                    b.Navigation("HoaDonCT")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

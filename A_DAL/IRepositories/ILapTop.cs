@@ -9,7 +9,7 @@ namespace A_DAL.IRepositories
 {
     public interface ILapTop
     {
-        public List<LapTop> GetAllLapTop(string name);
+        public List<LapTop> GetAllLapTop();
         List<LapTop> GetPhanLoaiLapTop(string name);
 
         public bool CreateLapTop(LapTop lt);

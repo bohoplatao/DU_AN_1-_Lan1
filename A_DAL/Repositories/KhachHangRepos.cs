@@ -3,6 +3,7 @@ using A_DAL.IRepositories;
 using A_DAL.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,17 +32,22 @@ namespace A_DAL.Repositories
             return true;
         }
 
-        public List<KhachHang> GetAllKH(string name)
+        public List<KhachHang> GetAllKH()
         {
             return _context.KhachHangs.ToList();
         }
 
         public List<KhachHang> GetKHByName(string name)
         {
-            throw new NotImplementedException();
+            return _context.KhachHangs.Where(p => p.TenKhachHang.Contains(name)).ToList();
+        }
+        public List<KhachHang> GetKHBySDT(decimal sdt)
+        {
+            string sdtString = sdt.ToString().Trim();
+            return _context.KhachHangs.Where(p => p.SoDienThoai.ToString().Contains(sdtString.ToString())).ToList();
         }
 
-        
+
 
         public bool UpdateKH(KhachHang kh)
         {
@@ -49,5 +55,7 @@ namespace A_DAL.Repositories
             _context.SaveChanges();
             return true;
         }
+
+    
     }
 }

@@ -9,8 +9,9 @@ namespace A_DAL.IRepositories
 {
     public interface IKhachHang
     {
-        public List<KhachHang> GetAllKH(string name);
+        public List<KhachHang> GetAllKH();
         List<KhachHang> GetKHByName(string name);
+        List<KhachHang> GetKHBySDT(decimal sdt);
 
         public bool CreateKH(KhachHang kh);
         public bool UpdateKH(KhachHang kh);

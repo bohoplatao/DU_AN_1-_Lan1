@@ -30,6 +30,7 @@ namespace A_DAL.Model
         public DateTime NgayMua { get; set; }
         public float TongTien { get; set; }
         public string ChuThich { get; set; }
+        public int TrangThai { get; set; }
 
         //Khai báo khóa phụ
         //public KhachHang KhachHang { get; set; }

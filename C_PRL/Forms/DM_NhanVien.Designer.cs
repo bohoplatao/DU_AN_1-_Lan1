@@ -159,6 +159,7 @@
             this.dtg_ShowNV.Size = new System.Drawing.Size(688, 150);
             this.dtg_ShowNV.TabIndex = 0;
             this.dtg_ShowNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_ShowNV_CellClick);
+            this.dtg_ShowNV.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtg_ShowNV_CellFormatting);
             // 
             // grb_TTNCC
             // 
@@ -189,6 +190,7 @@
             // 
             this.txt_MK.Location = new System.Drawing.Point(105, 205);
             this.txt_MK.Name = "txt_MK";
+            this.txt_MK.PasswordChar = '*';
             this.txt_MK.Size = new System.Drawing.Size(93, 27);
             this.txt_MK.TabIndex = 20;
             // 

@@ -16,9 +16,10 @@ namespace A_DAL.Configurations
             builder.HasKey(p => new { p.MaHoaDonChiTiet });// Thiết lập khóa chính
 
 
-            builder.HasOne(p => p.LapTopCT).WithMany(p => p.hoaDonCTs).HasForeignKey(p => p.MaLaptopChiTiet);
-            builder.HasOne(p => p.HoaDon).WithMany(p => p.HoaDonCTs).HasForeignKey(p => p.MaLaptopChiTiet);
+
+            builder.HasOne(p => p.HoaDon).WithMany(p => p.HoaDonCTs).HasForeignKey(p => p.MaHoaDon);
             builder.HasOne(p => p.DanhGia).WithMany(p => p.HoaDonCTs).HasForeignKey(p => p.MaDanhGia);
+            
 
         }
     }

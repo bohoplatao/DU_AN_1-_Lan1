@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace A_DAL.Repositories
 {
@@ -34,14 +35,18 @@ namespace A_DAL.Repositories
             return true;
         }
 
-        public List<LapTop> GetAllLapTop(string name)
+        public List<LapTop> GetAllLapTop()
         {
             return _context.LapTops.ToList();
         }
 
         public List<LapTop> GetPhanLoaiLapTop(string name)
         {
-            throw new NotImplementedException();
+            return _context.LapTops.Where(p => p.TenLaptop.Contains(name)).ToList();
+        }
+        public List<LapTop> GetLTByGia(int cannang)
+        {
+            return _context.LapTops.Where(p => p.CanNang.ToString().Contains(cannang.ToString())).ToList();
         }
 
         public bool UpdateLapTop(LapTop lt)

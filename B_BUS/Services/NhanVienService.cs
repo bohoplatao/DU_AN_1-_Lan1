@@ -30,19 +30,25 @@ namespace B_BUS.Services
 
         public List<NhanVien> GetAll(string search)
         {
-            if (search == null)
+            decimal searchNumber;
+            if (string.IsNullOrEmpty(search))
             {
-                return _repos.GetAllNhanVien(null).ToList();
+                return _repos.GetAllNhanVien().ToList();
+            }
+            else if (decimal.TryParse(search, out searchNumber))
+            {
+                
+                return _repos.GetBySDT(searchNumber).ToList();
             }
             else
             {
-                return _repos.GetAllNhanVien(null).Where(x => x.TenNhanVien.Contains(search)).ToList();
+                return _repos.GetNhanVienByName(search).ToList();
             }
         }
 
         public string Remove(NhanVien nv)
         {
-            var clone = _repos.GetAllNhanVien(null).FirstOrDefault(x => x.MaNhanVien == nv.MaNhanVien);
+            var clone = _repos.GetAllNhanVien().FirstOrDefault(x => x.MaNhanVien == nv.MaNhanVien);
             if (_repos.DeleteNhanVien(clone) == true)
             {
                 return "Xoa Thanh Cong";
@@ -55,7 +61,7 @@ namespace B_BUS.Services
 
         public string Update(NhanVien nv)
         {
-            var clone = _repos.GetAllNhanVien(null).FirstOrDefault(x => x.MaNhanVien == nv.MaNhanVien);
+            var clone = _repos.GetAllNhanVien().FirstOrDefault(x => x.MaNhanVien == nv.MaNhanVien);
             clone.MaNhanVien = nv.MaNhanVien;
 
             clone.TenNhanVien = nv.TenNhanVien;

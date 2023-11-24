@@ -43,16 +43,18 @@ namespace A_DAL.Context
         public DbSet<LapTopCT> LapTopCTs { get; set; }
         public DbSet<SaleCT> SaleCTs { get; set; }
         public DbSet<HoaDonCT> hoaDonCTs { get; set; }
+        public DbSet<Serial> Serials { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Thực hiện các ràng buộc kết nối
             base.OnConfiguring(optionsBuilder.
-                UseSqlServer(@"Data Source=LAPTOP-CXH2410\SQLEXPRESS;Initial Catalog=QL_LAPTOP_LAN5;Integrated Security=True"));
+                UseSqlServer(@"Data Source=LAPTOP-CXH2410\SQLEXPRESS;Initial Catalog=QL_LAPTOP_LAN8;Integrated Security=True"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<HoaDonCT>().HasOne<Serial>().WithOne(p => p.HoaDonCT).HasForeignKey<HoaDonCT>(p=>p.MaSerial);
             // Apply cac config cho cac model
              modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             // Phương thức này sẽ áp dụng tất cả các config hiện có

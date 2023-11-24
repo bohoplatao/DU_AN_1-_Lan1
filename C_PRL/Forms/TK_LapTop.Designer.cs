@@ -31,16 +31,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grb_NhaCC = new System.Windows.Forms.GroupBox();
             this.grb_TacVu = new System.Windows.Forms.GroupBox();
-            this.bt_Xoa = new System.Windows.Forms.Button();
-            this.bt_Sua = new System.Windows.Forms.Button();
-            this.bt_Them = new System.Windows.Forms.Button();
-            this.bt_Show = new System.Windows.Forms.Button();
+            this.tb_Timkiem = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.grb_DSNCC = new System.Windows.Forms.GroupBox();
             this.dtg_ShowLT = new System.Windows.Forms.DataGridView();
             this.grb_TTNCC = new System.Windows.Forms.GroupBox();
             this.txt_Soluong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bt_ThemAanh = new System.Windows.Forms.Button();
             this.ptb_Anh = new System.Windows.Forms.PictureBox();
             this.txt_TrangThai = new System.Windows.Forms.TextBox();
             this.txt_CanNang = new System.Windows.Forms.TextBox();
@@ -84,10 +81,8 @@
             // 
             // grb_TacVu
             // 
-            this.grb_TacVu.Controls.Add(this.bt_Xoa);
-            this.grb_TacVu.Controls.Add(this.bt_Sua);
-            this.grb_TacVu.Controls.Add(this.bt_Them);
-            this.grb_TacVu.Controls.Add(this.bt_Show);
+            this.grb_TacVu.Controls.Add(this.tb_Timkiem);
+            this.grb_TacVu.Controls.Add(this.label9);
             this.grb_TacVu.Location = new System.Drawing.Point(16, 433);
             this.grb_TacVu.Name = "grb_TacVu";
             this.grb_TacVu.Size = new System.Drawing.Size(711, 113);
@@ -95,41 +90,22 @@
             this.grb_TacVu.TabStop = false;
             this.grb_TacVu.Text = "Tác Vụ";
             // 
-            // bt_Xoa
+            // tb_Timkiem
             // 
-            this.bt_Xoa.Location = new System.Drawing.Point(602, 41);
-            this.bt_Xoa.Name = "bt_Xoa";
-            this.bt_Xoa.Size = new System.Drawing.Size(105, 45);
-            this.bt_Xoa.TabIndex = 3;
-            this.bt_Xoa.Text = "Xóa";
-            this.bt_Xoa.UseVisualStyleBackColor = true;
+            this.tb_Timkiem.Location = new System.Drawing.Point(144, 39);
+            this.tb_Timkiem.Name = "tb_Timkiem";
+            this.tb_Timkiem.Size = new System.Drawing.Size(173, 27);
+            this.tb_Timkiem.TabIndex = 2;
+            this.tb_Timkiem.TextChanged += new System.EventHandler(this.tb_Timkiem_TextChanged);
             // 
-            // bt_Sua
+            // label9
             // 
-            this.bt_Sua.Location = new System.Drawing.Point(414, 41);
-            this.bt_Sua.Name = "bt_Sua";
-            this.bt_Sua.Size = new System.Drawing.Size(105, 45);
-            this.bt_Sua.TabIndex = 2;
-            this.bt_Sua.Text = "Sửa";
-            this.bt_Sua.UseVisualStyleBackColor = true;
-            // 
-            // bt_Them
-            // 
-            this.bt_Them.Location = new System.Drawing.Point(218, 41);
-            this.bt_Them.Name = "bt_Them";
-            this.bt_Them.Size = new System.Drawing.Size(105, 45);
-            this.bt_Them.TabIndex = 1;
-            this.bt_Them.Text = "Thêm";
-            this.bt_Them.UseVisualStyleBackColor = true;
-            // 
-            // bt_Show
-            // 
-            this.bt_Show.Location = new System.Drawing.Point(35, 41);
-            this.bt_Show.Name = "bt_Show";
-            this.bt_Show.Size = new System.Drawing.Size(105, 45);
-            this.bt_Show.TabIndex = 0;
-            this.bt_Show.Text = "Show";
-            this.bt_Show.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(35, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 20);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Tìm Kiếm";
             // 
             // grb_DSNCC
             // 
@@ -150,12 +126,12 @@
             this.dtg_ShowLT.RowTemplate.Height = 29;
             this.dtg_ShowLT.Size = new System.Drawing.Size(688, 114);
             this.dtg_ShowLT.TabIndex = 0;
+            this.dtg_ShowLT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_ShowLT_CellClick_1);
             // 
             // grb_TTNCC
             // 
             this.grb_TTNCC.Controls.Add(this.txt_Soluong);
             this.grb_TTNCC.Controls.Add(this.label3);
-            this.grb_TTNCC.Controls.Add(this.bt_ThemAanh);
             this.grb_TTNCC.Controls.Add(this.ptb_Anh);
             this.grb_TTNCC.Controls.Add(this.txt_TrangThai);
             this.grb_TTNCC.Controls.Add(this.txt_CanNang);
@@ -189,15 +165,6 @@
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Số Lượng";
-            // 
-            // bt_ThemAanh
-            // 
-            this.bt_ThemAanh.Location = new System.Drawing.Point(535, 192);
-            this.bt_ThemAanh.Name = "bt_ThemAanh";
-            this.bt_ThemAanh.Size = new System.Drawing.Size(94, 29);
-            this.bt_ThemAanh.TabIndex = 15;
-            this.bt_ThemAanh.Text = "Thêm Ảnh";
-            this.bt_ThemAanh.UseVisualStyleBackColor = true;
             // 
             // ptb_Anh
             // 
@@ -296,9 +263,9 @@
             this.Controls.Add(this.grb_NhaCC);
             this.Name = "TK_LapTop";
             this.Text = "TK_LapTop";
-            this.Load += new System.EventHandler(this.TK_LapTop_Load);
             this.grb_NhaCC.ResumeLayout(false);
             this.grb_TacVu.ResumeLayout(false);
+            this.grb_TacVu.PerformLayout();
             this.grb_DSNCC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ShowLT)).EndInit();
             this.grb_TTNCC.ResumeLayout(false);
@@ -330,5 +297,10 @@
         private TextBox txt_MaLapTop;
         private Label label2;
         private Label label4;
+        private TextBox txt_TimKiem;
+        private Label label8;
+        private Button bt_TimKiem;
+        private Label label9;
+        private TextBox tb_Timkiem;
     }
 }
