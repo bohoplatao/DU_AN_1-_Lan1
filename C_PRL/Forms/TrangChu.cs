@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AForge.Video.DirectShow;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace C_PRL.Forms
     {
         private List<Button> childButtonsList1;
         private List<Button> childButtonsList2;
+        private VideoCaptureDevice FinalFrame;
         public TrangChu()
         {
             InitializeComponent();
@@ -120,6 +122,7 @@ namespace C_PRL.Forms
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Thoát thành công", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FinalFrame.Stop();
                 Application.Exit();
             }
 

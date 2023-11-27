@@ -69,8 +69,13 @@ namespace C_PRL
         {
             Application.Exit();
         }
-        
 
-
+        private void btn_LoginQR_Click(object sender, EventArgs e)
+        {
+            DangNhapQR qr = new DangNhapQR();
+            qr.Show();
+            qr.FormClosed += Login_FormClosed;
+            this.Hide();
+        }
     }
 }

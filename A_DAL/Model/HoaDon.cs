@@ -13,17 +13,17 @@ namespace A_DAL.Model
     {
        
         public int MaHoaDon { get; set; }
-        
 
         public int MaKhachHang { get; set; }
        
         public virtual KhachHang KhachHang { get; set; }
         public int MaNhanVien { get; set; }
+
         
         public virtual NhanVien NhanVien { get; set; }
-        public int MaDiemThuong { get; set; }
+       
         
-        public virtual DiemThuong DiemThuong { get; set; }
+        
         public string TenNguoiNhan { get; set; }
         public string DiaChi { get; set; }
         public decimal SoDienThoai { get; set; }

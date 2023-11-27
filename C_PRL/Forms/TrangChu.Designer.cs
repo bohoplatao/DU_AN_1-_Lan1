@@ -53,9 +53,10 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(297, 169);
+            this.pictureBox1.Size = new System.Drawing.Size(260, 127);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -76,16 +77,19 @@
             this.groupBox1.Controls.Add(this.bt_DanhMuc);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(3, -1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 646);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(276, 502);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // bt_TaiKhoan
             // 
-            this.bt_TaiKhoan.Location = new System.Drawing.Point(9, 586);
+            this.bt_TaiKhoan.Location = new System.Drawing.Point(8, 440);
+            this.bt_TaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_TaiKhoan.Name = "bt_TaiKhoan";
-            this.bt_TaiKhoan.Size = new System.Drawing.Size(163, 47);
+            this.bt_TaiKhoan.Size = new System.Drawing.Size(143, 35);
             this.bt_TaiKhoan.TabIndex = 12;
             this.bt_TaiKhoan.Text = "Đăng Xuất ";
             this.bt_TaiKhoan.UseVisualStyleBackColor = true;
@@ -93,9 +97,10 @@
             // 
             // bt_BaoCao
             // 
-            this.bt_BaoCao.Location = new System.Drawing.Point(9, 482);
+            this.bt_BaoCao.Location = new System.Drawing.Point(8, 362);
+            this.bt_BaoCao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_BaoCao.Name = "bt_BaoCao";
-            this.bt_BaoCao.Size = new System.Drawing.Size(163, 47);
+            this.bt_BaoCao.Size = new System.Drawing.Size(143, 35);
             this.bt_BaoCao.TabIndex = 11;
             this.bt_BaoCao.Text = "Báo Cáo";
             this.bt_BaoCao.UseVisualStyleBackColor = true;
@@ -103,9 +108,10 @@
             // 
             // bt_TK_NhanVien
             // 
-            this.bt_TK_NhanVien.Location = new System.Drawing.Point(175, 482);
+            this.bt_TK_NhanVien.Location = new System.Drawing.Point(153, 362);
+            this.bt_TK_NhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_TK_NhanVien.Name = "bt_TK_NhanVien";
-            this.bt_TK_NhanVien.Size = new System.Drawing.Size(125, 29);
+            this.bt_TK_NhanVien.Size = new System.Drawing.Size(109, 22);
             this.bt_TK_NhanVien.TabIndex = 10;
             this.bt_TK_NhanVien.Text = "Nhân Viên";
             this.bt_TK_NhanVien.UseVisualStyleBackColor = true;
@@ -113,9 +119,10 @@
             // 
             // bt_HoaDon
             // 
-            this.bt_HoaDon.Location = new System.Drawing.Point(6, 286);
+            this.bt_HoaDon.Location = new System.Drawing.Point(5, 214);
+            this.bt_HoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_HoaDon.Name = "bt_HoaDon";
-            this.bt_HoaDon.Size = new System.Drawing.Size(163, 47);
+            this.bt_HoaDon.Size = new System.Drawing.Size(143, 35);
             this.bt_HoaDon.TabIndex = 6;
             this.bt_HoaDon.Text = "Hóa Đơn";
             this.bt_HoaDon.UseVisualStyleBackColor = true;
@@ -123,9 +130,10 @@
             // 
             // bt_DM_Nhanvien
             // 
-            this.bt_DM_Nhanvien.Location = new System.Drawing.Point(175, 304);
+            this.bt_DM_Nhanvien.Location = new System.Drawing.Point(153, 228);
+            this.bt_DM_Nhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_DM_Nhanvien.Name = "bt_DM_Nhanvien";
-            this.bt_DM_Nhanvien.Size = new System.Drawing.Size(128, 29);
+            this.bt_DM_Nhanvien.Size = new System.Drawing.Size(112, 22);
             this.bt_DM_Nhanvien.TabIndex = 5;
             this.bt_DM_Nhanvien.Text = "Nhân Viên";
             this.bt_DM_Nhanvien.UseVisualStyleBackColor = true;
@@ -133,9 +141,10 @@
             // 
             // bt_TK_HoaDon
             // 
-            this.bt_TK_HoaDon.Location = new System.Drawing.Point(178, 447);
+            this.bt_TK_HoaDon.Location = new System.Drawing.Point(156, 335);
+            this.bt_TK_HoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_TK_HoaDon.Name = "bt_TK_HoaDon";
-            this.bt_TK_HoaDon.Size = new System.Drawing.Size(125, 29);
+            this.bt_TK_HoaDon.Size = new System.Drawing.Size(109, 22);
             this.bt_TK_HoaDon.TabIndex = 9;
             this.bt_TK_HoaDon.Text = "Hóa Đơn";
             this.bt_TK_HoaDon.UseVisualStyleBackColor = true;
@@ -143,9 +152,10 @@
             // 
             // bt_DM_KhachHang
             // 
-            this.bt_DM_KhachHang.Location = new System.Drawing.Point(175, 269);
+            this.bt_DM_KhachHang.Location = new System.Drawing.Point(153, 202);
+            this.bt_DM_KhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_DM_KhachHang.Name = "bt_DM_KhachHang";
-            this.bt_DM_KhachHang.Size = new System.Drawing.Size(128, 29);
+            this.bt_DM_KhachHang.Size = new System.Drawing.Size(112, 22);
             this.bt_DM_KhachHang.TabIndex = 4;
             this.bt_DM_KhachHang.Text = "Khách Hàng";
             this.bt_DM_KhachHang.UseVisualStyleBackColor = true;
@@ -153,9 +163,10 @@
             // 
             // bt_TìmKiem
             // 
-            this.bt_TìmKiem.Location = new System.Drawing.Point(9, 379);
+            this.bt_TìmKiem.Location = new System.Drawing.Point(8, 284);
+            this.bt_TìmKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_TìmKiem.Name = "bt_TìmKiem";
-            this.bt_TìmKiem.Size = new System.Drawing.Size(163, 47);
+            this.bt_TìmKiem.Size = new System.Drawing.Size(143, 35);
             this.bt_TìmKiem.TabIndex = 2;
             this.bt_TìmKiem.Text = "Tìm Kiếm";
             this.bt_TìmKiem.UseVisualStyleBackColor = true;
@@ -163,9 +174,10 @@
             // 
             // bt_TK_KhachHang
             // 
-            this.bt_TK_KhachHang.Location = new System.Drawing.Point(178, 412);
+            this.bt_TK_KhachHang.Location = new System.Drawing.Point(156, 309);
+            this.bt_TK_KhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_TK_KhachHang.Name = "bt_TK_KhachHang";
-            this.bt_TK_KhachHang.Size = new System.Drawing.Size(125, 29);
+            this.bt_TK_KhachHang.Size = new System.Drawing.Size(109, 22);
             this.bt_TK_KhachHang.TabIndex = 8;
             this.bt_TK_KhachHang.Text = "Khách Hàng";
             this.bt_TK_KhachHang.UseVisualStyleBackColor = true;
@@ -173,9 +185,10 @@
             // 
             // bt_DM_LapTop
             // 
-            this.bt_DM_LapTop.Location = new System.Drawing.Point(175, 234);
+            this.bt_DM_LapTop.Location = new System.Drawing.Point(153, 176);
+            this.bt_DM_LapTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_DM_LapTop.Name = "bt_DM_LapTop";
-            this.bt_DM_LapTop.Size = new System.Drawing.Size(128, 29);
+            this.bt_DM_LapTop.Size = new System.Drawing.Size(112, 22);
             this.bt_DM_LapTop.TabIndex = 3;
             this.bt_DM_LapTop.Text = "LapTop";
             this.bt_DM_LapTop.UseVisualStyleBackColor = true;
@@ -183,9 +196,10 @@
             // 
             // bt_TK_LapTop
             // 
-            this.bt_TK_LapTop.Location = new System.Drawing.Point(178, 379);
+            this.bt_TK_LapTop.Location = new System.Drawing.Point(156, 284);
+            this.bt_TK_LapTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_TK_LapTop.Name = "bt_TK_LapTop";
-            this.bt_TK_LapTop.Size = new System.Drawing.Size(125, 29);
+            this.bt_TK_LapTop.Size = new System.Drawing.Size(109, 22);
             this.bt_TK_LapTop.TabIndex = 7;
             this.bt_TK_LapTop.Text = "LapTop";
             this.bt_TK_LapTop.UseVisualStyleBackColor = true;
@@ -193,9 +207,10 @@
             // 
             // bt_Hang_TheLoai
             // 
-            this.bt_Hang_TheLoai.Location = new System.Drawing.Point(175, 199);
+            this.bt_Hang_TheLoai.Location = new System.Drawing.Point(153, 149);
+            this.bt_Hang_TheLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Hang_TheLoai.Name = "bt_Hang_TheLoai";
-            this.bt_Hang_TheLoai.Size = new System.Drawing.Size(128, 29);
+            this.bt_Hang_TheLoai.Size = new System.Drawing.Size(112, 22);
             this.bt_Hang_TheLoai.TabIndex = 2;
             this.bt_Hang_TheLoai.Text = "Hãng - Thể Loại ";
             this.bt_Hang_TheLoai.UseVisualStyleBackColor = true;
@@ -203,9 +218,10 @@
             // 
             // bt_DanhMuc
             // 
-            this.bt_DanhMuc.Location = new System.Drawing.Point(6, 199);
+            this.bt_DanhMuc.Location = new System.Drawing.Point(5, 149);
+            this.bt_DanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_DanhMuc.Name = "bt_DanhMuc";
-            this.bt_DanhMuc.Size = new System.Drawing.Size(163, 47);
+            this.bt_DanhMuc.Size = new System.Drawing.Size(143, 35);
             this.bt_DanhMuc.TabIndex = 1;
             this.bt_DanhMuc.Text = "Danh Mục";
             this.bt_DanhMuc.UseVisualStyleBackColor = true;
@@ -213,19 +229,24 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(324, 12);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(284, 9);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(817, 633);
+            this.panel1.Size = new System.Drawing.Size(715, 499);
             this.panel1.TabIndex = 2;
             // 
             // TrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1153, 650);
+            this.ClientSize = new System.Drawing.Size(1009, 512);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TrangChu";
             this.Text = "Trang Chủ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

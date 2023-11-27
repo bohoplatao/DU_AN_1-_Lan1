@@ -33,7 +33,7 @@ namespace A_DAL.Context
         public DbSet<Chip> Chips { get; set; }
         
         public DbSet<DanhGia> DanhGias { get; set; }
-        public DbSet<DiemThuong> DiemThuongs { get; set; }
+     
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }

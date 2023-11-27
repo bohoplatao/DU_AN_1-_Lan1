@@ -44,6 +44,8 @@
             this.txt_DChi = new System.Windows.Forms.TextBox();
             this.txt_Sdt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_Trangthai = new System.Windows.Forms.TextBox();
             this.txt_gia = new System.Windows.Forms.TextBox();
             this.txt_MaSerial = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtg_ChuaThanhToan = new System.Windows.Forms.DataGridView();
-            this.txt_Trangthai = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_DaTHanhToan)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ChuaThanhToan)).BeginInit();
@@ -226,6 +226,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Chung";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(28, 138);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 15);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Trang Thai";
+            // 
+            // txt_Trangthai
+            // 
+            this.txt_Trangthai.Location = new System.Drawing.Point(144, 135);
+            this.txt_Trangthai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Trangthai.Name = "txt_Trangthai";
+            this.txt_Trangthai.Size = new System.Drawing.Size(180, 23);
+            this.txt_Trangthai.TabIndex = 36;
+            // 
             // txt_gia
             // 
             this.txt_gia.Location = new System.Drawing.Point(480, 157);
@@ -315,28 +332,11 @@
             this.dtg_ChuaThanhToan.TabIndex = 16;
             this.dtg_ChuaThanhToan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_ChuaThanhToan_CellClick);
             // 
-            // txt_Trangthai
-            // 
-            this.txt_Trangthai.Location = new System.Drawing.Point(144, 135);
-            this.txt_Trangthai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_Trangthai.Name = "txt_Trangthai";
-            this.txt_Trangthai.Size = new System.Drawing.Size(180, 23);
-            this.txt_Trangthai.TabIndex = 36;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(28, 138);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 15);
-            this.label10.TabIndex = 37;
-            this.label10.Text = "Trang Thai";
-            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 495);
+            this.ClientSize = new System.Drawing.Size(690, 524);
             this.Controls.Add(this.dtg_ChuaThanhToan);
             this.Controls.Add(this.bt_DoaDom);
             this.Controls.Add(this.bt_Huy);
