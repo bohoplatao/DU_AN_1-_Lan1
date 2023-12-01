@@ -54,7 +54,7 @@ namespace C_PRL.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            var data = _repos.GetOne().FirstOrDefault();
+            
                BarcodeReader reader = new BarcodeReader();
                 Result result = reader.Decode((Bitmap)pictureBox1.Image);
                 try
@@ -71,9 +71,13 @@ namespace C_PRL.Forms
                     tt.Show();
                     tt.FormClosed += DangNhapQR_FormClosed;
                     this.Hide();
-
-                    //textBox1.Text = decoded;
                 }
+                else
+                {
+                    MessageBox.Show("mã này không thể đăng nhập");
+                }
+
+
             }
             catch (Exception ex)
             {

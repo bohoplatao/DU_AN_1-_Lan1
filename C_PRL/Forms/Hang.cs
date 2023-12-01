@@ -120,8 +120,18 @@ namespace C_PRL.Forms
             }
         }
 
-       
-
-       
+        private void txt_MaNCC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == '\b')
+            {
+               
+                    e.Handled = false; // Cho phép nhập
+                
+            }
+            else
+            {
+                e.Handled = true; // Không cho phép nhập
+            }
+        }
     }
 }

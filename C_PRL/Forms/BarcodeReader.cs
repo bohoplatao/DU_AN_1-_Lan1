@@ -17,58 +17,50 @@ namespace C_PRL.Forms
         }
 
         //
-        // Summary:
-        //     Initializes a new instance of the ZXing.BarcodeReader class.
+        
+        // Khởi tạo một phiên bản mới của lớp ZXing.BarcodeReader.
         //
-        // Parameters:
-        //   reader:
-        //     Sets the reader which should be used to find and decode the barcode. If null
-        //     then MultiFormatReader is used
+        // Thông số:
+        //   người đọc:
+        // Đặt đầu đọc sẽ được sử dụng để tìm và giải mã mã vạch. Nếu không
+        // sau đó MultiFormatReader được sử dụng
         //
-        //   createLuminanceSource:
-        //     Sets the function to create a luminance source object for a bitmap. If null,
-        //     an exception is thrown when Decode is called
+        // createLuminanceSource:
+        // Đặt hàm để tạo đối tượng nguồn độ chói cho bitmap. Nếu không,
+        // một ngoại lệ được đưa ra khi Decode được gọi
         //
-        //   createBinarizer:
-        //     Sets the function to create a binarizer object for a luminance source. If null
-        //     then HybridBinarizer is used
+        // createBinarizer:
+        // Đặt hàm để tạo đối tượng binarizer cho nguồn độ chói. Nếu không
+        // sau đó HybridBinarizer được sử dụng
         public BarcodeReader(Reader reader, Func<Bitmap, LuminanceSource> createLuminanceSource, Func<LuminanceSource, Binarizer> createBinarizer)
             : base(reader, createLuminanceSource ?? defaultCreateLuminanceSource, createBinarizer)
         {
         }
 
         //
-        // Summary:
-        //     Initializes a new instance of the ZXing.BarcodeReader class.
+        
+        // Khởi tạo một phiên bản mới của lớp ZXing.BarcodeReader.
         //
-        // Parameters:
-        //   reader:
-        //     Sets the reader which should be used to find and decode the barcode. If null
-        //     then MultiFormatReader is used
+        // Thông số:
+        //   người đọc:
+        // Đặt đầu đọc sẽ được sử dụng để tìm và giải mã mã vạch. Nếu không
+        // sau đó MultiFormatReader được sử dụng
         //
-        //   createLuminanceSource:
-        //     Sets the function to create a luminance source object for a bitmap. If null,
-        //     an exception is thrown when Decode is called
+        // createLuminanceSource:
+        // Đặt hàm để tạo đối tượng nguồn độ chói cho bitmap. Nếu không,
+        // một ngoại lệ được đưa ra khi Decode được gọi
         //
-        //   createBinarizer:
-        //     Sets the function to create a binarizer object for a luminance source. If null
-        //     then HybridBinarizer is used
+        // createBinarizer:
+        // Đặt hàm để tạo đối tượng binarizer cho nguồn độ chói. Nếu không
+        // sau đó HybridBinarizer được sử dụng
         //
-        //   createRGBLuminanceSource:
-        //     Sets the function to create a luminance source object for a rgb raw byte array.
+        // createRGBLuminanceSource:
+        // Đặt hàm để tạo đối tượng nguồn độ chói cho mảng byte thô rgb.
         public BarcodeReader(Reader reader, Func<Bitmap, LuminanceSource> createLuminanceSource, Func<LuminanceSource, Binarizer> createBinarizer, Func<byte[], int, int, RGBLuminanceSource.BitmapFormat, LuminanceSource> createRGBLuminanceSource)
             : base(reader, createLuminanceSource ?? defaultCreateLuminanceSource, createBinarizer, createRGBLuminanceSource)
         {
         }
 
-        //internal Result Decode(Image image)
-        //{
-        //    var barcodeReader = new BarcodeReader();
-        //    var bitmap = (Bitmap)image; // Chuyển đổi Image thành Bitmap
-
-        //    var result = barcodeReader.Decode(bitmap);
-
-        //    return result;
-        //}
+      
     }
 }

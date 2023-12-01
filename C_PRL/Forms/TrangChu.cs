@@ -1,4 +1,5 @@
-﻿using AForge.Video.DirectShow;
+﻿using A_DAL.Repositories;
+using AForge.Video.DirectShow;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,10 @@ namespace C_PRL.Forms
 {
     public partial class TrangChu : Form
     {
+        DangNhapRepos _repos = new DangNhapRepos();
         private List<Button> childButtonsList1;
         private List<Button> childButtonsList2;
-        private VideoCaptureDevice FinalFrame;
+        
         public TrangChu()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace C_PRL.Forms
             childButtonsList2 = new List<Button>();
             childButtonsList2.Add(bt_TK_LapTop);
             childButtonsList2.Add(bt_TK_KhachHang);
-            childButtonsList2.Add(bt_TK_HoaDon);
+            //childButtonsList2.Add(bt_TK_HoaDon);
             childButtonsList2.Add(bt_TK_NhanVien);
 
             HideChildButtons1();
@@ -111,7 +113,14 @@ namespace C_PRL.Forms
 
         private void bt_BaoCao_Click(object sender, EventArgs e)
         {
+            panel1.Controls.Clear();
 
+            BaoCao hang = new BaoCao();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
         }
 
         private void bt_TaiKhoan_Click(object sender, EventArgs e)
@@ -122,7 +131,7 @@ namespace C_PRL.Forms
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("Thoát thành công", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FinalFrame.Stop();
+                
                 Application.Exit();
             }
 
@@ -209,6 +218,8 @@ namespace C_PRL.Forms
             panel1.Controls.Add(hang);
             hang.Show();
         }
+
+        
     }
 
    

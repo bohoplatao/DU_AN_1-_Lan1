@@ -9,28 +9,28 @@ namespace C_PRL.Forms
     public class BitmapLuminanceSource : BaseLuminanceSource
     {
         //
-        // Summary:
-        //     Initializes a new instance of the ZXing.BitmapLuminanceSource class.
+        
+        // Khởi tạo một phiên bản mới của lớp ZXing.BitmapLuminanceSource.
         //
-        // Parameters:
-        //   width:
-        //     The width.
+        // Thông số:
+        //   chiều rộng:
+        // Chiều rộng.
         //
-        //   height:
-        //     The height.
+        //   chiều cao:
+        //     Chiều cao.
         protected BitmapLuminanceSource(int width, int height)
             : base(width, height)
         {
         }
 
         //
-        // Summary:
-        //     Initializes a new instance of the ZXing.BitmapLuminanceSource class with the
-        //     image of a Bitmap instance
+        // Bản tóm tắt:
+        // Khởi tạo một phiên bản mới của lớp ZXing.BitmapLuminanceSource với
+        // hình ảnh của một phiên bản Bitmap
         //
-        // Parameters:
-        //   bitmap:
-        //     The bitmap.
+        // Thông số:
+        // bitmap:
+        // Bản đồ bit.
         public BitmapLuminanceSource(Bitmap bitmap)
             : base(bitmap.Width, bitmap.Height)
         {
@@ -38,13 +38,13 @@ namespace C_PRL.Forms
         }
 
         //
-        // Summary:
-        //     calculates the luminance values for bitmaps
+        // Bản tóm tắt:
+        // tính toán các giá trị độ chói cho bitmap
         //
-        // Parameters:
-        //   bitmap:
+        // Thông số:
+        // bitmap:
         //
-        //   luminances:
+        // độ chói:
         protected static void CalculateLuminanceValues(Bitmap bitmap, byte[] luminances)
         {
             int num = bitmap.Height;
@@ -111,13 +111,13 @@ namespace C_PRL.Forms
         }
 
         //
-        // Summary:
-        //     old slow way for unsupported bit depth
+        // Bản tóm tắt:
+        // cách chậm cũ cho độ sâu bit không được hỗ trợ
         //
-        // Parameters:
-        //   bitmap:
+        // Thông số:
+        // bitmap:
         //
-        //   luminances:
+        // độ chói:
         protected static void CalculateLuminanceValuesSlow(Bitmap bitmap, byte[] luminances)
         {
             int num = bitmap.Height;
@@ -132,17 +132,16 @@ namespace C_PRL.Forms
                 }
             }
         }
-
         //
-        // Summary:
-        //     calculates the luminance values for 1-bit indexed bitmaps
+        // Bản tóm tắt:
+        // tính toán các giá trị độ sáng cho bitmap được lập chỉ mục 1 bit
         //
-        // Parameters:
-        //   bitmap:
+        // Thông số:
+        // bitmap:
         //
-        //   data:
+        //   dữ liệu:
         //
-        //   luminances:
+        // độ chói:
         protected static void CalculateLuminanceValuesForIndexed1Bit(Bitmap bitmap, BitmapData data, byte[] luminances)
         {
             int num = data.Height;
@@ -183,16 +182,15 @@ namespace C_PRL.Forms
             }
         }
 
+        
+        // tính toán các giá trị độ sáng cho bitmap được lập chỉ mục 4 bit
         //
-        // Summary:
-        //     calculates the luminance values for 4-bit indexed bitmaps
+        // Thông số:
+        // bitmap:
         //
-        // Parameters:
-        //   bitmap:
+        //   dữ liệu:
         //
-        //   data:
-        //
-        //   luminances:
+        // độ chói:
         protected static void CalculateLuminanceValuesForIndexed4Bit(Bitmap bitmap, BitmapData data, byte[] luminances)
         {
             if (bitmap.PixelFormat != PixelFormat.Format4bppIndexed)
@@ -248,15 +246,15 @@ namespace C_PRL.Forms
         }
 
         //
-        // Summary:
-        //     calculates the luminance values for 8-bit indexed bitmaps
+        // Bản tóm tắt:
+        // tính toán các giá trị độ chói cho bitmap được lập chỉ mục 8 bit
         //
-        // Parameters:
-        //   bitmap:
+        // Thông số:
+        // bitmap:
         //
-        //   data:
+        //   dữ liệu:
         //
-        //   luminances:
+        // độ chói:
         protected static void CalculateLuminanceValuesForIndexed8Bit(Bitmap bitmap, BitmapData data, byte[] luminances)
         {
             int num = data.Height;
@@ -292,15 +290,15 @@ namespace C_PRL.Forms
         }
 
         //
-        // Summary:
-        //     calculates the luminance values for 565 encoded bitmaps
+        // Bản tóm tắt:
+        // tính toán các giá trị độ chói cho 565 bitmap được mã hóa
         //
-        // Parameters:
-        //   bitmap:
+        // Thông số:
+        // bitmap:
         //
-        //   data:
+        //   dữ liệu:
         //
-        //   luminances:
+        // độ chói:
         private static void CalculateLuminanceValues565(Bitmap bitmap, BitmapData data, byte[] luminances)
         {
             int num = data.Height;
@@ -337,15 +335,15 @@ namespace C_PRL.Forms
         }
 
         //
-        // Summary:
-        //     calculates the luminance values for 24-bit encoded bitmaps
+        // Bản tóm tắt:
+        // tính toán các giá trị độ chói cho bitmap được mã hóa 24 bit
         //
-        // Parameters:
-        //   bitmap:
+        // Thông số:
+        // bitmap:
         //
-        //   data:
+        //   dữ liệu:
         //
-        //   luminances:
+        // độ chói:
         private static void CalculateLuminanceValues24Bit(Bitmap bitmap, BitmapData data, byte[] luminances)
         {
             int num = data.Height;
@@ -375,16 +373,16 @@ namespace C_PRL.Forms
         }
 
         //
-        // Summary:
-        //     calculates the luminance values for 32-bit encoded bitmaps without respecting
-        //     the alpha channel
+        
+        // tính toán các giá trị độ chói cho bitmap được mã hóa 32 bit mà không tôn trọng
+        // kênh alpha
         //
-        // Parameters:
-        //   bitmap:
+        // Thông số:
+        // bitmap:
         //
-        //   data:
+        //   dữ liệu:
         //
-        //   luminances:
+        // độ chói:
         private static void CalculateLuminanceValues32BitWithoutAlpha(Bitmap bitmap, BitmapData data, byte[] luminances)
         {
             int num = data.Height;
@@ -472,19 +470,19 @@ namespace C_PRL.Forms
         }
 
         //
-        // Summary:
-        //     Should create a new luminance source with the right class type. The method is
-        //     used in methods crop and rotate.
+       
+        // Nên tạo nguồn sáng mới với đúng loại lớp. Phương pháp này là
+        // được sử dụng trong các phương thức cắt và xoay.
         //
-        // Parameters:
-        //   newLuminances:
-        //     The new luminances.
+        // Thông số:
+        // độ sáng mới:
+        // Độ sáng mới.
         //
-        //   width:
-        //     The width.
+        //   chiều rộng:
+        // Chiều rộng.
         //
-        //   height:
-        //     The height.
+        //   chiều cao:
+        //     Chiều cao.
         protected override LuminanceSource CreateLuminanceSource(byte[] newLuminances, int width, int height)
         {
             return new BitmapLuminanceSource(width, height)

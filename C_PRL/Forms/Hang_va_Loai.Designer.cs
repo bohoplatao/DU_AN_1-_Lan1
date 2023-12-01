@@ -37,9 +37,10 @@
             // bt_TheLoai
             // 
             this.bt_TheLoai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bt_TheLoai.Location = new System.Drawing.Point(427, 88);
+            this.bt_TheLoai.Location = new System.Drawing.Point(472, 54);
+            this.bt_TheLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_TheLoai.Name = "bt_TheLoai";
-            this.bt_TheLoai.Size = new System.Drawing.Size(356, 63);
+            this.bt_TheLoai.Size = new System.Drawing.Size(312, 47);
             this.bt_TheLoai.TabIndex = 12;
             this.bt_TheLoai.Text = "Thể Loại";
             this.bt_TheLoai.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // bt_HangSX
             // 
             this.bt_HangSX.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bt_HangSX.Location = new System.Drawing.Point(55, 88);
+            this.bt_HangSX.Location = new System.Drawing.Point(146, 54);
+            this.bt_HangSX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_HangSX.Name = "bt_HangSX";
-            this.bt_HangSX.Size = new System.Drawing.Size(356, 63);
+            this.bt_HangSX.Size = new System.Drawing.Size(312, 47);
             this.bt_HangSX.TabIndex = 11;
             this.bt_HangSX.Text = "Nhà Cung Cấp";
             this.bt_HangSX.UseVisualStyleBackColor = true;
@@ -61,28 +63,30 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Brown;
-            this.label1.Location = new System.Drawing.Point(177, 28);
+            this.label1.Location = new System.Drawing.Point(253, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(488, 54);
+            this.label1.Size = new System.Drawing.Size(391, 45);
             this.label1.TabIndex = 10;
             this.label1.Text = "Nhà Cung Cấp - Thể Loại";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(7, 157);
+            this.panel1.Location = new System.Drawing.Point(6, 118);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 499);
+            this.panel1.Size = new System.Drawing.Size(899, 514);
             this.panel1.TabIndex = 13;
             // 
             // Hang_va_Loai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 660);
+            this.ClientSize = new System.Drawing.Size(917, 643);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bt_TheLoai);
             this.Controls.Add(this.bt_HangSX);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Hang_va_Loai";
             this.Text = "Hang_va_Loai";
             this.ResumeLayout(false);

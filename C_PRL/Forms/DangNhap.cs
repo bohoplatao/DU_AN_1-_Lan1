@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace C_PRL
@@ -46,6 +47,8 @@ namespace C_PRL
            
             if (data == null || data.MatKhau != txt_PassWord.Text)
             {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng !!!");
+
                 return;
             }
             else
@@ -76,6 +79,26 @@ namespace C_PRL
             qr.Show();
             qr.FormClosed += Login_FormClosed;
             this.Hide();
+        }
+
+        private void txt_Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == '\b')
+            {
+                // Kiểm tra nếu ký tự là dấu chấm và TextBox đã có dấu chấm trước đó
+                if (e.KeyChar == '.' && txt_Login.Text.Contains('.'))
+                {
+                    e.Handled = true; // Không cho phép nhập
+                }
+                else
+                {
+                    e.Handled = false; // Cho phép nhập
+                }
+            }
+            else
+            {
+                e.Handled = true; // Không cho phép nhập
+            }
         }
     }
 }

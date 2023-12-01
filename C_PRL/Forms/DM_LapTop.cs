@@ -130,7 +130,24 @@ namespace C_PRL.Forms
             txt_Soluong.Text = a.Soluong.ToString();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void txt_MaLapTop_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '.' || e.KeyChar == '\b')
+            {
+
+                e.Handled = false; // Cho phép nhập
+
+            }
+            else
+            {
+                e.Handled = true; // Không cho phép nhập
+            }
+        }
     }
 }
     

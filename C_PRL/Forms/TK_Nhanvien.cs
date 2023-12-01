@@ -46,7 +46,14 @@ namespace C_PRL.Forms
                 dtg_ShowNV.Rows.Add(stt++, a.MaNhanVien, a.TenNhanVien, a.DiaChi, a.HinhAnh, a.SoDienThoai, a.NgaySinh, a.MatKhau, a.QRCode);
             }
         }
-        private void dtg_ShowNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+    
+
+       
+
+       
+
+        private void dtg_ShowNV_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
             _idWhenClick = int.Parse(dtg_ShowNV.Rows[rowindex].Cells[1].Value.ToString());
@@ -63,7 +70,7 @@ namespace C_PRL.Forms
             ptb_QRCode.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        private void tb_Tk_TextChanged(object sender, EventArgs e)
+        private void tb_Tk_TextChanged_1(object sender, EventArgs e)
         {
             int stt = 1;
             dtg_ShowNV.ColumnCount = 9;
@@ -88,7 +95,7 @@ namespace C_PRL.Forms
             }
         }
 
-        private void dtg_ShowNV_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dtg_ShowNV_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == 7) // Thay đổi số 2 thành chỉ số cột mật khẩu của bạn
             {

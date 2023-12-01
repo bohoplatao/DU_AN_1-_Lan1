@@ -45,10 +45,12 @@
             // btn_Cancel
             // 
             this.btn_Cancel.BackColor = System.Drawing.Color.IndianRed;
-            this.btn_Cancel.Location = new System.Drawing.Point(355, 262);
+            this.btn_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.Image")));
+            this.btn_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Cancel.Location = new System.Drawing.Point(383, 262);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(94, 36);
+            this.btn_Cancel.Size = new System.Drawing.Size(127, 36);
             this.btn_Cancel.TabIndex = 39;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = false;
@@ -57,10 +59,12 @@
             // btn_Login
             // 
             this.btn_Login.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_Login.Location = new System.Drawing.Point(199, 262);
+            this.btn_Login.Image = ((System.Drawing.Image)(resources.GetObject("btn_Login.Image")));
+            this.btn_Login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Login.Location = new System.Drawing.Point(206, 262);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(108, 36);
+            this.btn_Login.Size = new System.Drawing.Size(127, 36);
             this.btn_Login.TabIndex = 38;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = false;
@@ -104,6 +108,7 @@
             this.txt_Login.Name = "txt_Login";
             this.txt_Login.Size = new System.Drawing.Size(148, 23);
             this.txt_Login.TabIndex = 34;
+            this.txt_Login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Login_KeyPress);
             // 
             // pictureBox1
             // 
@@ -121,9 +126,11 @@
             // btn_LoginQR
             // 
             this.btn_LoginQR.BackColor = System.Drawing.Color.GreenYellow;
-            this.btn_LoginQR.Location = new System.Drawing.Point(58, 262);
+            this.btn_LoginQR.Image = ((System.Drawing.Image)(resources.GetObject("btn_LoginQR.Image")));
+            this.btn_LoginQR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_LoginQR.Location = new System.Drawing.Point(23, 262);
             this.btn_LoginQR.Name = "btn_LoginQR";
-            this.btn_LoginQR.Size = new System.Drawing.Size(108, 36);
+            this.btn_LoginQR.Size = new System.Drawing.Size(127, 36);
             this.btn_LoginQR.TabIndex = 40;
             this.btn_LoginQR.Text = "Login_QR";
             this.btn_LoginQR.UseVisualStyleBackColor = false;
