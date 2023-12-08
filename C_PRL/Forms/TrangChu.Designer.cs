@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Sale = new System.Windows.Forms.Button();
             this.bt_TaiKhoan = new System.Windows.Forms.Button();
             this.bt_BaoCao = new System.Windows.Forms.Button();
             this.bt_TK_NhanVien = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.bt_Hang_TheLoai = new System.Windows.Forms.Button();
             this.bt_DanhMuc = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +63,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btn_Sale);
             this.groupBox1.Controls.Add(this.bt_TaiKhoan);
             this.groupBox1.Controls.Add(this.bt_BaoCao);
             this.groupBox1.Controls.Add(this.bt_TK_NhanVien);
@@ -81,6 +85,20 @@
             this.groupBox1.Size = new System.Drawing.Size(276, 685);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // btn_Sale
+            // 
+            this.btn_Sale.BackColor = System.Drawing.Color.Violet;
+            this.btn_Sale.Image = ((System.Drawing.Image)(resources.GetObject("btn_Sale.Image")));
+            this.btn_Sale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Sale.Location = new System.Drawing.Point(152, 500);
+            this.btn_Sale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Sale.Name = "btn_Sale";
+            this.btn_Sale.Size = new System.Drawing.Size(123, 32);
+            this.btn_Sale.TabIndex = 13;
+            this.btn_Sale.Text = "Sale";
+            this.btn_Sale.UseVisualStyleBackColor = false;
+            this.btn_Sale.Click += new System.EventHandler(this.btn_Sale_Click);
             // 
             // bt_TaiKhoan
             // 
@@ -129,7 +147,7 @@
             this.bt_HoaDon.BackColor = System.Drawing.Color.MediumPurple;
             this.bt_HoaDon.Image = ((System.Drawing.Image)(resources.GetObject("bt_HoaDon.Image")));
             this.bt_HoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_HoaDon.Location = new System.Drawing.Point(9, 271);
+            this.bt_HoaDon.Location = new System.Drawing.Point(5, 290);
             this.bt_HoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_HoaDon.Name = "bt_HoaDon";
             this.bt_HoaDon.Size = new System.Drawing.Size(143, 35);
@@ -261,6 +279,20 @@
             this.panel1.Size = new System.Drawing.Size(933, 682);
             this.panel1.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumPurple;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(5, 580);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 35);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Đổi Mật Khẩu";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -272,6 +304,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TrangChu";
             this.Text = "Trang Chủ";
+            this.Load += new System.EventHandler(this.TrangChu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -295,5 +328,7 @@
         private Button bt_TaiKhoan;
         private Button bt_BaoCao;
         private Panel panel1;
+        private Button btn_Sale;
+        private Button button1;
     }
 }

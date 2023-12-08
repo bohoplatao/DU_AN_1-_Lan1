@@ -165,6 +165,7 @@
             // 
             // dtg_ShowKH
             // 
+            this.dtg_ShowKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_ShowKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_ShowKH.Location = new System.Drawing.Point(17, 20);
             this.dtg_ShowKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

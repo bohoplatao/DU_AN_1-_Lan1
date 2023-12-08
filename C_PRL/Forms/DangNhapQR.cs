@@ -38,6 +38,8 @@ namespace C_PRL.Forms
 
             comboBox1.SelectedIndex = 0;
             FinalFrame = new VideoCaptureDevice();
+
+            button2.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,6 +47,7 @@ namespace C_PRL.Forms
             FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
             FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
             FinalFrame.Start();
+            button2.Enabled=true;
         }
 
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -67,7 +70,7 @@ namespace C_PRL.Forms
 
 
 
-                    TrangChu tt = new TrangChu();
+                    TrangChu tt = new TrangChu(null);
                     tt.Show();
                     tt.FormClosed += DangNhapQR_FormClosed;
                     this.Hide();

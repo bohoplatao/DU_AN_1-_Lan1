@@ -114,24 +114,43 @@ namespace C_PRL.Forms
             txt_gia.Text = a.Gia.ToString();
         }
 
-        private void bt_Them_Click(object sender, EventArgs e)
+        private void bt_xoa_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Chon ma serial?");
-            var a = new HoaDonCT();
-            a.MaHoaDon = int.Parse(txt_MaHoaDon.Text);
-            a.MaSerial = int.Parse(txt_MaSerial.Text);
-            a.Gia = float.Parse(txt_gia.Text);
-            var option = MessageBox.Show("Xac nhan Them", "Xac Nhan", MessageBoxButtons.YesNo);
-            if (option == DialogResult.Yes)
-            {
-                MessageBox.Show(_ctService.Add(a));
-            }
-            else
-            {
-                return;
-            }
+            txt_ChuThich.Text = "";
+            txt_DChi.Text = "";
+            txt_gia.Text = "";
+            txt_MaHoaDon.Text = "";
+            txt_MaKH.Text = "";
+            txt_MaSerial.Text = "";
+            txt_Sdt.Text = "";
+            txt_TennguoiNhan.Text = "";
+            txt_Trangthai.Text = "";
+            
         }
 
-      
+        private void bt_Luu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void bt_Them_Click(object sender, EventArgs e)
+        //{
+        //    //MessageBox.Show("Chon ma serial?");
+        //    var a = new HoaDonCT();
+        //    a.MaHoaDon = int.Parse(txt_MaHoaDon.Text);
+        //    a.MaSerial = int.Parse(txt_MaSerial.Text);
+        //    a.Gia = float.Parse(txt_gia.Text);
+        //    var option = MessageBox.Show("Xac nhan Them", "Xac Nhan", MessageBoxButtons.YesNo);
+        //    if (option == DialogResult.Yes)
+        //    {
+        //        MessageBox.Show(_ctService.Add(a));
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
+
+
     }
 }

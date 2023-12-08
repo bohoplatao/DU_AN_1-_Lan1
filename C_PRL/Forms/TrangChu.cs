@@ -14,11 +14,15 @@ namespace C_PRL.Forms
 {
     public partial class TrangChu : Form
     {
+        int tk;
+        string mk;
+        string tenchucvu1;
         DangNhapRepos _repos = new DangNhapRepos();
+        DangNhapRepos _repos2 = new DangNhapRepos();
         private List<Button> childButtonsList1;
         private List<Button> childButtonsList2;
         
-        public TrangChu()
+        public TrangChu(string tenchucvu)
         {
             InitializeComponent();
             childButtonsList1 = new List<Button>();
@@ -30,11 +34,12 @@ namespace C_PRL.Forms
             childButtonsList2 = new List<Button>();
             childButtonsList2.Add(bt_TK_LapTop);
             childButtonsList2.Add(bt_TK_KhachHang);
-            //childButtonsList2.Add(bt_TK_HoaDon);
+            childButtonsList2.Add(btn_Sale);
             childButtonsList2.Add(bt_TK_NhanVien);
 
             HideChildButtons1();
             HideChildButtons2();
+            tenchucvu1 = tenchucvu;
             
         }
         
@@ -168,6 +173,13 @@ namespace C_PRL.Forms
 
         private void bt_DM_Nhanvien_Click(object sender, EventArgs e)
         {
+            if(tenchucvu1 == "Nhân Viên")
+            {
+                MessageBox.Show(" Chỉ Quản lí mới được truy cập, bạn là nhân viên mà ? ");
+                return;
+            }
+
+
             panel1.Controls.Clear();
 
             DM_NhanVien hang = new DM_NhanVien();
@@ -219,7 +231,42 @@ namespace C_PRL.Forms
             hang.Show();
         }
 
-        
+        private void btn_Sale_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+
+            SALESS hang = new SALESS();
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
+        }
+
+        private void TrangChu_Load(object sender, EventArgs e)
+        {
+            //var data = _repos.GetOne().FirstOrDefault();
+
+            //if (data.Quyen == "Nhân Viên")
+            //{
+
+            //    bt_DM_Nhanvien.Enabled = false;
+            //    return;
+            //}
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+
+            DoiMatKhau hang = new DoiMatKhau(tk,mk) ;
+            hang.TopLevel = false;
+            hang.FormBorderStyle = FormBorderStyle.None;
+            hang.Dock = DockStyle.Fill;
+            panel1.Controls.Add(hang);
+            hang.Show();
+        }
     }
 
    

@@ -31,9 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDon));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dtg_DaTHanhToan = new System.Windows.Forms.DataGridView();
-            this.bt_Them = new System.Windows.Forms.Button();
             this.bt_Luu = new System.Windows.Forms.Button();
-            this.bt_sua = new System.Windows.Forms.Button();
             this.bt_xoa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,6 +66,7 @@
             // 
             // dtg_DaTHanhToan
             // 
+            this.dtg_DaTHanhToan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_DaTHanhToan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_DaTHanhToan.Location = new System.Drawing.Point(10, 422);
             this.dtg_DaTHanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -78,54 +77,31 @@
             this.dtg_DaTHanhToan.TabIndex = 9;
             this.dtg_DaTHanhToan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_DaTHanhToan_CellClick_1);
             // 
-            // bt_Them
-            // 
-            this.bt_Them.Image = ((System.Drawing.Image)(resources.GetObject("bt_Them.Image")));
-            this.bt_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Them.Location = new System.Drawing.Point(73, 572);
-            this.bt_Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_Them.Name = "bt_Them";
-            this.bt_Them.Size = new System.Drawing.Size(126, 51);
-            this.bt_Them.TabIndex = 11;
-            this.bt_Them.Text = "Thêm";
-            this.bt_Them.UseVisualStyleBackColor = true;
-            this.bt_Them.Click += new System.EventHandler(this.bt_Them_Click);
-            // 
             // bt_Luu
             // 
             this.bt_Luu.Image = ((System.Drawing.Image)(resources.GetObject("bt_Luu.Image")));
             this.bt_Luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_Luu.Location = new System.Drawing.Point(273, 572);
+            this.bt_Luu.Location = new System.Drawing.Point(229, 572);
             this.bt_Luu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Luu.Name = "bt_Luu";
             this.bt_Luu.Size = new System.Drawing.Size(126, 51);
             this.bt_Luu.TabIndex = 12;
-            this.bt_Luu.Text = "Lưu ";
+            this.bt_Luu.Text = "Thanh Toán ";
             this.bt_Luu.UseVisualStyleBackColor = true;
-            // 
-            // bt_sua
-            // 
-            this.bt_sua.Image = ((System.Drawing.Image)(resources.GetObject("bt_sua.Image")));
-            this.bt_sua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_sua.Location = new System.Drawing.Point(490, 572);
-            this.bt_sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bt_sua.Name = "bt_sua";
-            this.bt_sua.Size = new System.Drawing.Size(126, 51);
-            this.bt_sua.TabIndex = 13;
-            this.bt_sua.Text = "Hủy";
-            this.bt_sua.UseVisualStyleBackColor = true;
+            this.bt_Luu.Click += new System.EventHandler(this.bt_Luu_Click);
             // 
             // bt_xoa
             // 
             this.bt_xoa.Image = ((System.Drawing.Image)(resources.GetObject("bt_xoa.Image")));
             this.bt_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bt_xoa.Location = new System.Drawing.Point(701, 572);
+            this.bt_xoa.Location = new System.Drawing.Point(501, 572);
             this.bt_xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_xoa.Name = "bt_xoa";
             this.bt_xoa.Size = new System.Drawing.Size(126, 51);
             this.bt_xoa.TabIndex = 14;
-            this.bt_xoa.Text = "Hủy";
+            this.bt_xoa.Text = "Clear";
             this.bt_xoa.UseVisualStyleBackColor = true;
+            this.bt_xoa.Click += new System.EventHandler(this.bt_xoa_Click);
             // 
             // label1
             // 
@@ -331,6 +307,7 @@
             // 
             // dtg_ChuaThanhToan
             // 
+            this.dtg_ChuaThanhToan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_ChuaThanhToan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_ChuaThanhToan.Location = new System.Drawing.Point(10, 9);
             this.dtg_ChuaThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -348,9 +325,7 @@
             this.ClientSize = new System.Drawing.Size(917, 643);
             this.Controls.Add(this.dtg_ChuaThanhToan);
             this.Controls.Add(this.bt_xoa);
-            this.Controls.Add(this.bt_sua);
             this.Controls.Add(this.bt_Luu);
-            this.Controls.Add(this.bt_Them);
             this.Controls.Add(this.dtg_DaTHanhToan);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -369,9 +344,7 @@
 
         private OpenFileDialog openFileDialog1;
         private DataGridView dtg_DaTHanhToan;
-        private Button bt_Them;
         private Button bt_Luu;
-        private Button bt_sua;
         private Button bt_xoa;
         private Label label1;
         private Label label4;

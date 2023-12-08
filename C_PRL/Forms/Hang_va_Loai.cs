@@ -56,9 +56,9 @@ namespace C_PRL.Forms
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            TrangChu tt = new TrangChu();
-            tt.Show();
-            this.Hide();
+            //TrangChu tt = new TrangChu();
+            //tt.Show();
+            //this.Hide();
         }
 
         private void bt_Hang_TheLoai_Click(object sender, EventArgs e)

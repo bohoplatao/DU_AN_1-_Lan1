@@ -80,5 +80,10 @@ namespace B_BUS.Services
                 return "Sua that bai";
             }
         }
+
+        public bool ChanggPassWord(int id, string pass, string newpass)
+        {
+            return _repos.ChangePassWord(id, pass, newpass);
+        }
     }
 }

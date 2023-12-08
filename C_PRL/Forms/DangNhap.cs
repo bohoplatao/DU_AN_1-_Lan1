@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 
 namespace C_PRL
@@ -55,7 +56,7 @@ namespace C_PRL
             {
                
 
-                TrangChu trangchu = new TrangChu();
+                TrangChu trangchu = new TrangChu(data.Quyen);
                 trangchu.Show();
                 trangchu.FormClosed += Login_FormClosed;
                 this.Hide();
@@ -99,6 +100,24 @@ namespace C_PRL
             {
                 e.Handled = true; // Không cho phép nhập
             }
+        }
+
+        private void btn_Login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            bool showPassword = checkBox1.Checked;
+            //txt_Login.UseSystemPasswordChar = !showPassword;
+            txt_PassWord.UseSystemPasswordChar = !showPassword;
+          
         }
     }
 }

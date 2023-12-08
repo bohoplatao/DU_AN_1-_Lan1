@@ -37,6 +37,7 @@
             this.txt_Login = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_LoginQR = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,6 +70,7 @@
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = false;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            this.btn_Login.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btn_Login_KeyPress);
             // 
             // txt_PassWord
             // 
@@ -136,12 +138,24 @@
             this.btn_LoginQR.UseVisualStyleBackColor = false;
             this.btn_LoginQR.Click += new System.EventHandler(this.btn_LoginQR_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(383, 214);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(121, 19);
+            this.checkBox1.TabIndex = 41;
+            this.checkBox1.Text = "Hiển thị mật khẩu";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(522, 310);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btn_LoginQR);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Login);
@@ -153,6 +167,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DangNhap";
             this.Text = "DangNhap";
+            this.Load += new System.EventHandler(this.DangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -171,5 +186,6 @@
         private TextBox txt_Login;
         private PictureBox pictureBox1;
         private Button btn_LoginQR;
+        private CheckBox checkBox1;
     }
 }

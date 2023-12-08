@@ -58,5 +58,20 @@ namespace A_DAL.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public  bool ChangePassWord(int id, string pass, string newPass)
+        {
+            var nhanviem = _context.NhanViens.FirstOrDefault(x => x.MaNhanVien == id && x.MatKhau == pass);
+            if(nhanviem != null)
+            {
+                nhanviem.MatKhau =newPass;
+                _context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

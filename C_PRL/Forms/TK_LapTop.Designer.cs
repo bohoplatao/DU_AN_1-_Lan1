@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grb_NhaCC = new System.Windows.Forms.GroupBox();
             this.grb_TacVu = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tb_Timkiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.grb_DSNCC = new System.Windows.Forms.GroupBox();
@@ -50,14 +51,13 @@
             this.txt_MaLapTop = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grb_NhaCC.SuspendLayout();
             this.grb_TacVu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grb_DSNCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ShowLT)).BeginInit();
             this.grb_TTNCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_Anh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,6 +98,16 @@
             this.grb_TacVu.TabStop = false;
             this.grb_TacVu.Text = "Tác Vụ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(94, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // tb_Timkiem
             // 
             this.tb_Timkiem.Location = new System.Drawing.Point(126, 29);
@@ -130,6 +140,7 @@
             // 
             // dtg_ShowLT
             // 
+            this.dtg_ShowLT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_ShowLT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_ShowLT.Location = new System.Drawing.Point(17, 20);
             this.dtg_ShowLT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -275,16 +286,6 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Tên LapTop";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(94, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // TK_LapTop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -298,12 +299,12 @@
             this.grb_NhaCC.ResumeLayout(false);
             this.grb_TacVu.ResumeLayout(false);
             this.grb_TacVu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grb_DSNCC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ShowLT)).EndInit();
             this.grb_TTNCC.ResumeLayout(false);
             this.grb_TTNCC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_Anh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
